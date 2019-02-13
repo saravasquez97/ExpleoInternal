@@ -1,0 +1,41 @@
+<?php
+require_once ("../../lib/Logger.php");
+
+class LandingModel {
+
+    private $logger;
+    private $configfile = "../../../config/config.ini";
+
+    public function __construct()
+    {
+        $this->logger = Logger::getInstance();
+
+        if(!file_exists($this->configfile)){
+            $this->logger->log_error("Could not open config file to get Google Maps info");
+        }
+    }
+
+
+    public function getGoogleMap()
+    {
+        if ($config = parse_ini_file($this->configfile, true)){
+            $array = [
+                "API_TOKEN" => $config['GoogleMaps']['API_TOKEN'],
+                "latitude" => $config['GoogleMaps']['latitude'],
+                "longitude" => $config['GoogleMaps']['longitude'],
+                "zoom" => $config['GoogleMaps']['zoom']
+            ];
+        } else {
+            $array = [
+                "API_TOKEN" => "API_TOKEN",
+                "latitude" => 38.047989,
+                "longitude" => -84.501640,
+                "zoom" => 10
+            ];
+        }
+
+        return $array;
+    }
+
+
+}

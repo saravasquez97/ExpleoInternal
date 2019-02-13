@@ -1,0 +1,16 @@
+
+
+# Ignoring internal files created by phpStorm
+.idea/
+
+# Ignoring temp save files created by macOS
+.DS_Store
+
+# Ignoring local files created by Sublime plugin
+.phpintel/
+
+# Excluding log files
+log/*
+
+# Allows for empty log direcotry to be kept in version control
+!log/.gitkeep

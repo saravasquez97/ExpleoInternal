@@ -1,0 +1,258 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: connor
+ * Date: 10/24/18
+ * Time: 7:56 PM
+ */
+
+
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+
+        <meta name="author" content="Connor">
+
+
+
+        <!-- Bootstrap core CSS -->
+
+        <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+
+        <link href="../../../assets/css/main.css" rel="stylesheet">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                if($(window).width() > 767){
+                    $('.navbar .dropdown').hover(function() {
+                        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+
+                    }, function() {
+                        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
+
+                    });
+
+                    $('.navbar .dropdown > a').click(function(){
+                        location.href = this.href;
+                    });
+                }
+            });
+        </script>
+
+
+    </head>
+
+
+
+    <body>
+
+        <div id="heading2">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="col-md-10">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li><a class="nav-link" href="./">Home </a></li>
+
+
+                            <li><a class="nav-link" href="profile.php">Profile</a></li>
+                            <li><a class="nav-link" href="groups.php">Groups</a></li>
+
+
+                            <li><a class="nav-link" href="http://sqs.com/">SQS Site</a></li>
+                            <li><a class="nav-link" href="../sign_out/sign_out_controller.php">Sign out</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="./"><img id="header-img" src="../../../assets/images/logo.png" alt="SQS logo"></a>
+                </div>
+            </nav>
+
+
+        </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript
+
+        ================================================== -->
+
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script src="../../../assets/js/bootstrap.min.js"></script>
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+        <script src="../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    </body>
+
+</html>
+
+
+<!-- <div class='container' id='error_success'>Account creation successful. Please continue with registration.</div> -->
+<div class="alert alert-success">Account creation successful. Please continue with registration.</div>
+
+
+<html>
+    <div class="container">
+        <div class="form-horizontal" id="centerbox">
+            Registration Progress
+        </div>
+        <div class="progress">
+            <div  id="ProgressBarReg2" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width:29%"></div>
+        </div>
+        <div class="login" id="register2">
+            <form action="sign_up_controller.php" id="RegForm2" method="post">
+                <input id="hidden" type='hidden' name = 'hidden' value="sign_up_view_2">
+                <label style="text-align: center;" class="control-label col-sm-12">Optional, may leave this page blank</label>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="gender">Gender:</label><br>
+                        <div class="radio">
+                            <label><input type="radio" name="gender" value="Female" id="radiobtn_Female"/>&nbsp;Female</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="gender" value="Male" id="radiobtn_Male"/>&nbsp;Male</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="gender" value="Other" id="radiobtn_Other"/>&nbsp;Other</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="gender" value="Prefer not to answer" id="radiobtn_Other"/>&nbsp;Prefer not to answer</label>
+                        </div>
+                        <br/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dateofbirth">Date of Birth:</label><br>
+                        <input class="form-control" type="date" name="dateofbirth" size="30" id="signup_DOB" value=""/>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="phone_number">Primary Phone:</label><br>
+                        <input class="form-control" type="number" name="phone_number" maxlength="10" id="signup_PhoneNumber" value=""/>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="street_number">Street Number:</label><br>
+                        <input class="form-control" type="number" name="street_number" size="10" id="signup_StreetNumber" maxlength="15" value=""/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="street_name">Street Name:</label><br>
+                        <input class="form-control" type="text" name="street_name" size="30" id="signup_StreetName" maxlength="50" value=""/>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="city">City:</label><br>
+                        <input class="form-control" type="text" name="city" size="30" id="signup_City" maxlength="50" value=""/>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="state">State:</label><br>
+                        <select class="form-control" name="state" id="signup_State">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="zip">Zip:</label><br>
+                        <input class="form-control" type="number" maxlength="5" name="zip" id="signup_Zip" value=""/>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" id="centerbox">
+                    <div class="control-label col-sm-6">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Next" id="signup_Next1"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</html>
+
+

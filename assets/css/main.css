@@ -1,0 +1,360 @@
+@import url(bootstrap.css);
+
+/*MOBILE CSS*/
+body {background-color: #f1f1f1;}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+}
+.photo-edit {
+	display: none;
+}
+.navbar {
+  margin-bottom: 20px;
+}
+#navbarSupportedContent ul.dropdown-menu {
+	background: #31373e;
+	color: white;
+	decoration: none;
+}
+#navbarSupportedContent ul.dropdown-menu a{
+	color: white;
+	text-decoration: none;
+}
+#navbarSupportedContent ul.dropdown-menu a:hover {
+	color: white;
+}
+#header-img {
+	width: 50px;
+	height: auto;
+	float: right;
+	border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+#header-img:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+@media (max-width: 991px) {
+	#header-img {
+		display: none;
+	}
+}
+#heading2 {
+	font-size: 1.15rem;
+}
+#heading2 .nav li a img{
+	height: auto;
+	width: 80px;
+	margin: auto;
+	padding-left: 15px;
+	padding-right: -15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#home_page{
+	text-align: center;
+}
+
+.form-group{
+	padding-top:20px;
+	padding-left: 5px;
+}
+#inputbox {
+	align-items:center;
+	justify-content:center;
+}
+
+#centerbox {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#welcomemessage {
+	padding-right: 20px;
+	padding-top: 20px;
+}
+
+#centertext {
+	text-align: center;
+}
+
+.banner {
+	height: 200px;
+	background-color: #31708f;
+}
+
+.sqs_blue_line{
+	background-color: #62a5c1;
+}
+
+.inventory form{
+	display: inline;
+}
+
+#product h4{
+	display: inline;
+}
+
+table{
+	width: 90%;
+	position: relative;
+}
+
+.table.table-striped th{
+	border-bottom: 2px solid #c4c6c7;
+	border-top: 2px solid #c4c6c7;
+}
+
+.table.table-striped td{
+	vertical-align: middle;
+	border: none;
+}
+
+.table.table-striped tbody tr:nth-of-type(odd){
+	background-color: rgba(232, 232, 232, 0.5);
+}
+
+#product .panel{
+	background-color: #F8F8F8;
+	padding:10px;
+}
+
+
+#heading .navbar-right a {
+	padding:0px;
+	padding-right: 2em;
+}
+
+#heading2 .navbar-right a {
+	padding:0px;
+	padding-right: 2em;
+}
+
+.software-skills-arrows.text-center {
+	margin-top: 50px;
+}
+
+.hardware-skills-arrows.text-center {
+	margin-top: 50px;
+}
+
+#error {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.col-sm-7b {
+	padding-left:23px;
+	width: 10%;
+}
+
+.col-sm-7c {
+	width: 50%;
+}
+
+#up-label{
+	margin-bottom:21px;
+}
+.modal-dialog {
+    max-width: 800px; /* Full width */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-backdrop {
+  z-index: -1;
+}
+
+/* The hero image */
+.hero-image {
+    /* The image used */
+    background: url("../images/Header-Home.png");
+
+    /* Set a specific height */
+    height: 50vh;
+		margin-top: -20px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.welcome {
+	text-align: center;
+}
+.group-info {
+	width: 20%;
+	display: inline-block;
+	padding-bottom: 5px;
+}
+.group-btn {
+	width: auto;
+  margin-right: 5px;
+	display: inline-block;
+	padding-bottom: 5px;
+	float: right;
+}
+
+.rm-btn {
+	display: inline-block;
+	float: right !important;
+}
+/* =================================================
+                SIGN IN PAGE STYLE
+================================================== */
+
+.login {
+  padding: 24px;
+  margin: 30px auto 68px;
+  background: #fff;
+  position: relative;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+.signup-skills {
+	width: 50%;
+  padding: 24px;
+  margin: 30px auto 68px;
+  background: #fff;
+  position: relative;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+#register2 {
+	width: 750px;
+}
+@media (max-width: 600px){
+  .login {
+    width: 350px;
+  }
+}
+@media (min-width: 601px){
+  .login {
+    width: 500px;
+  }
+}
+.login input[type="text"], .login input[type="password"], .login input[type="email"] {
+  margin-bottom: 5%;
+  border: none;
+  border: solid 1px #ddd;
+  background-color: #fbfbfb;
+  font-size: 1rem;
+  padding: 3px;
+}
+.login input[type="text"], .login input[type="password"],
+.login input[type="submit"], .login input[type="email"] {
+  width: 100%;
+  height: 40px;
+}
+#login-button {
+  margin-bottom: 10px;
+}
+.login .container-fluid {
+  padding: 0px;
+}
+
+/* =================================================
+                PROFILE PAGE STYLE
+================================================== */
+.profile-labels {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+}
+
+.profile-labels label {
+	margin-bottom: .35rem;
+}
+
+.profile-inputs {
+	display: inline-block;
+}
+
+.software-skills-bank, .software-skills-personal, .hardware-skills-bank, .hardware-skills-personal {
+	width: 45%;
+	float: left;
+}
+
+.software-skills-bank select, .software-skills-personal select, .hardware-skills-bank select, .hardware-skills-personal select {
+			height: 200px;
+			padding: 0;
+}
+
+.software-skills-bank option, .software-skills-personal option, .hardware-skills-bank option, .hardware-skills-personal option {
+			padding: 4px 10px 4px 10px;
+}
+.software-skills-bank option:hover, .software-skills-personal option:hover, .hardware-skills-bank option:hover, .hardware-skills-personal option:hover {
+		background: #EEEEEE;
+}
+select:disabled {
+	background-color: rgb(235, 235, 228);
+}
+
+.software-skills-arrows, .hardware-skills-arrows {
+  float: left;
+  width: 10%;
+}
+
+.software-skills-arrows input, .hardware-skills-arrows input {
+		width: 70%;
+		margin-bottom: 5px;
+}
+
+/* =================================================
+                ADMIN PAGE STYLE
+================================================== */
+.software-skills, .hardware-skills {
+	display: inline-block;
+  width: 45%;
+}
+
+.software-skills .software-skills-bank, .hardware-skills .hardware-skills-bank {
+	width: 100%;
+	float: left;
+}
+
+.my-group-container {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 10px #ccc;
+		margin-bottom: 1rem;
+}
+.my-group-container h5 {
+    margin: 0;
+}
