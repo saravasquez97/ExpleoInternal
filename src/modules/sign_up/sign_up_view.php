@@ -105,6 +105,14 @@ session_start();
                             <input class="form-control" type="password" name="confirm_password" size="30" id="signup_ConfirmPass" maxlength="30" placeholder="Confirm Password" autocomplete="off"/><br>
                         </div>
                     </div>
+		    <div class="row">
+			<div class="col-md-8 offset-md-3">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="sales_check" id="sales_check" name="sales_check">
+					<label for="salesCheck">I am a Sales Representative</label><br>
+				</div>
+			</div>
+		    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <br>

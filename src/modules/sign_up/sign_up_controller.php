@@ -24,7 +24,12 @@ if(!isset($_POST['hidden'])){
     noneMissing();
     passwordsChecked();
     createNewUser();
-    header("Location: ../../views/email_verification_page.php");
+    if(isset($_POST['sales_check'])){
+    	header("Location: ../../views/sales_verification_page.php");
+    }
+    else{
+    	header("Location: ../../views/email_verification_page.php");
+    }
     exit();
 }
 
@@ -43,6 +48,7 @@ function createNewUser(){
         'last_name' => $_POST['last_name'],
         'email' => $_POST['email'],
         'password' => $_POST['password'],
+	'sales' => $_POST['sales_check']
     );
     $returned = newUser($array);
     if(is_numeric($returned)){
@@ -78,8 +84,8 @@ function passwordsChecked(){
  */
 function noneMissing(){
     foreach($_POST as $element){
-        if(empty($element)){
-            error("Error: One or more required fields are empty");
+	if(empty($element)){
+            	error("Error: One or more required fields are empty");
         }
     }
 }

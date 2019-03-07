@@ -26,16 +26,25 @@ function newUser($data){
         $email = $data['email'];
         $pass = $data['password'];
 
+	if(isset($data['sales_check'])){
+		$sales = 'SALES';
+	}
+	else{
+		$sales = 'USER';
+	}
+
         $sql = "INSERT INTO user (
                     first_name, 
                     last_name, 
                     email, 
-                    password
+                    password,
+		    role
                     ) VALUES (
                     '$first', 
                     '$last', 
                     '$email', 
-                    '$pass');";
+                    '$pass',
+		    '$sales');";
         $stmt = $base->prepare($sql);
         $stmt->execute();
 
