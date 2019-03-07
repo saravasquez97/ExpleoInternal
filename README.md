@@ -1,5 +1,5 @@
 
-# CS499 Team 2 SQS Training Site README
+# CS499 Team 1 SQS Training Site: Employee Comparison README
 
 
 
