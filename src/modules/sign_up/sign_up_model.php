@@ -26,7 +26,7 @@ function newUser($data){
         $email = $data['email'];
         $pass = $data['password'];
 
-	if(isset($data['sales_check'])){
+	if(isset($data['sales'])){
 		$sales = 'SALES';
 	}
 	else{
