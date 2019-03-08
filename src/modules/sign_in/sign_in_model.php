@@ -45,7 +45,7 @@ function errorModel($var) {
     if ($var == 'password') {
         $message = "Invalid password! Please try again.";
     }else{
-        $message = "This email does not exist! Please try again.";
+        $message = "This email does not exist! If you are a Sales Representative, there is a chance that your account creation has been rejected by an administrator. Please try again, and contact an adminstrator if you continue to have problems logging in. ";
     }
     return $message;
 }

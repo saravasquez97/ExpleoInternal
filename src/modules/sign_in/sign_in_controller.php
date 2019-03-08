@@ -77,9 +77,12 @@ function verifyLogin() {
             $_SESSION['first_name'] = $returned['first_name'];
             $_SESSION['last_name'] = $returned['last_name'];
             $_SESSION['role'] = $returned['role'];
-        }else{
-            error("This account has not been verified. Please check your email (and junk folder) and follow the link provided");
-        }
+	}else{
+		if($returned['role'] != "SALES"){
+            	error("This account has not been verified. Please check your email (and junk folder) and follow the link provided");}
+		else{
+			error("This account has not been verified by an administrator. Please try to login again at a later time");}
+	}
     } else {
         error($returned);
     }
