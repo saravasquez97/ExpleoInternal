@@ -5,7 +5,7 @@
 <div class="container">
 <h2 id="SearchHead">Employee Search</h2> 
 
-<?php  if($_SESSION['role'] != "SALES" || $_SESSION['role'] != "ADMIN" || $_SESSION['role'] != "SUPERADMIN"){
+<?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ){
 echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
 
 
