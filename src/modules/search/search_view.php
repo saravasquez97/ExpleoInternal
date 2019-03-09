@@ -1,26 +1,31 @@
 <?php
     include('../../views/header.php');
-session_start();
 ?>
 
+<div class="container">
+<h2 id="SearchHead">Employee Search</h2> 
 
-<html lang="en">
-<h2 id="SearchHead">Search Users</h2> 
+<?php  if($_SESSION['role'] != "SALES"){
+echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
 
-<h5 id="SearchInstructions">Please enter one or more of the following to search for users who possess that specific skill or characteristic.</h5> 
 
+else{ 
+?>
+<!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
 <hr>
-<div class = "container">
 
-<form action="add_to_database.php" method="post">
-Hardware Skill: <input type="text" id="scii_name" name="sci_name" maxlength = "25" style> 
-Software Skill: <input type="text" id="common_name" name="common_name" maxlength ="25">
-<!--- Previous Vertical: <input type="text" id="classification" name="classification" maxlength = "25"> -->
-<!--- Previous Client: <input type="text" id="prev_client" name="prev_client" maxlength="25"> -->
+<div class = "text-center">
+
+<form class= "form-inline my-2 my-lg-0" action="search_view.php" method="post">
+<font size="4">Hardware or Software Skill: &nbsp;</font> <input type="text" class = "form-control mr-sm-2"  aria-label="Search" id="user_skill" name="user_skill" maxlength = "25" style> 
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 
 </div>
+</div>
+
+<?php }
+?>
 
 <?php
     include('../../views/footer.php');

@@ -74,7 +74,7 @@
 	  	if($_SESSION['role'] == "SALES"){
 			echo "
 			  <li class=\"nav-item\">
-			    <a class=\"nav-link\" href=\"../profile/profile_controller.php\">Employee Search</a>
+			    <a class=\"nav-link\" href=\"../search/search_view.php\">Employee Search</a>
 			  </li>
 			";	
 		}
