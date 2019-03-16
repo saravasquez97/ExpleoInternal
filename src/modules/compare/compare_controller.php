@@ -1,7 +1,9 @@
 <?php
+include("compare_model.php");
+
 function Create_Cards(){
 	//get user ids
-	$uid = [1,2,3,4,5];
+	$uid = [1,4,6,8];
 	
 	//put cards in overall container and start list for cards	
 	?> <div class = "container"> 
@@ -11,20 +13,30 @@ function Create_Cards(){
 	for( $i = 0; $i < count($uid); $i++)
 	{
 		?> <li class = "list-inline-item"> <?php
-		IndividualCard($uid[$i]);
+		individualCard($uid[$i]);
 		?> </li> <?php
 	}	
 	?> </div> <?php
 }
 
-function IndividualCard($user) {
-	?>
+function individualCard($user) {
+
+	//set booleans for display to be true
+	//change later for added functionality of hiding sections
+	$show_name = true;
+	$show_pic = true;
+	$show_basic = true;
+	$show_soft = true;
+	$show_hard = true;
+?>
         <div class="card" style="width: 22rem;">
 	<!---<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
-                <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!---<a href="#" class="btn btn-primary">Go somewhere</a>-->
+		<div class="card-body">
+			<h5 class = "card-title"> <?php echo showName($user); ?></h5><hr>			
+			<p class="card-text"><?php echo showBasic($user, $show_basic);?></p><hr>
+			<p class="cared-text"><?php echo showSoft($user, $show_soft);?></p><hr>	
+			<p class="cared-text"><?php echo showHard($user, $show_hard);?></p>
+			<!---<a href="#" class="btn btn-primary">Go somewhere</a>-->
                 </div>
         </div>
 
