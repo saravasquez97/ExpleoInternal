@@ -4,10 +4,10 @@
    *
    *
    */
-  session_start();
-
-
-
+   if(!isset($_SESSION))
+     {
+         session_start();
+     }
 ?>
 
 
@@ -74,9 +74,9 @@
 	  	if($_SESSION['role'] == "SALES"){
 			echo "
 			  <li class=\"nav-item\">
-			    <a class=\"nav-link\" href=\"../search/search_view.php\">Employee Search</a>
+			    <a class=\"nav-link\" href=\"../search/search_controller.php\">Employee Search</a>
 			  </li>
-			";	
+			";
 		}
 		else{
 			echo"
@@ -107,6 +107,4 @@
           </form>
       </div>
     </nav>
-
-
-
+    <?php ?>
