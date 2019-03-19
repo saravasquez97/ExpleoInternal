@@ -12,6 +12,62 @@ if(isset($_POST['user_skill'])) {
     // print_r($user_with_skill);
     #header("Location: search_view.php");
     header("Location: search_view.php");
+	<div class="container">
+	<hr>
+	<form class="form-horizontal" id="testResults" action="search_controller.php" method="post">
+	<div class="container" style='display:flex;'>
+	<h1>Search Results</h1>
+	<input id="TestCompare" type="submit" name="compare" value="Compare" class="btn btn-primary" style="margin-left: auto;">
+	</div>
+	<table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
+	foreach($user_with_skill as $row) : ?>
+	<tr>
+		<?php $photo = $row['photo'];
+		echo "<td style='border-top: 1px solid #ddd;
+			   border-left: 1px solid #ddd;
+			   border-bottom: 1px solid #ddd;
+			   border-radius: 10px 0 0 10px;
+			   color: #ffffff;
+			   font-size: 20px;'
+			   bgcolor='#006a66'
+			   align='center'>
+			   <img src='$photo' alt='No Photo' height='42' width='50' style='margin: 5px 0;'>
+		</td>"; ?>
+		<td style='border-top: 1px solid #ddd;
+			   border-bottom: 1px solid #ddd;
+			   color: #ffffff;
+			   font-size: 20px;'
+			   bgcolor='#006a66'
+			   align='center'>
+			   <?php echo $row['name']; ?>
+		</td>
+		<td style='border-top: 1px solid #ddd;
+			   border-bottom: 1px solid #ddd;
+			   color: #ffffff;
+			   font-size: 20px;'
+			   bgcolor='#006a66'
+			   align='center'>
+			   <?php echo $row['skill']; ?>
+		</td>
+		<?php
+		$checkval = intval($row['userID']);
+		echo "<td style='border-top: 1px solid #ddd;
+				 border-right: 1px solid #ddd;
+				 border-bottom: 1px solid #ddd;
+				 border-radius: 0 10px 10px 0;
+				 color: #ffffff;
+				 font-size: 20px;'
+				 bgcolor='#006a66'
+				 align='center'>
+			<input type='checkbox' name='$checkval' value='$checkval' />
+				Add
+		      </td>";
+		?>
+	</tr>
+	<?php endforeach; ?>
+	</table>
+	</form>
+	</div>
 }
 else {
   header("Location: search_view.php");
