@@ -2,7 +2,7 @@
 /**
  * Controller for the landing page.
  * @author Stephen Ritchie <stephen.ritchie@uky.edu>
- */ 
+ */
 
 session_start();
 
@@ -26,6 +26,6 @@ if ($_SESSION['uid'] != null){
 	include ("landing_view.php");
 } else {
     Logger::getInstance()->log("User was not logged in; redirecting to index.php");
-	header("Location: /index.php");
+	header("Location: ../../../index.php");
     exit();
 }
