@@ -58,5 +58,4 @@ class Connector extends PDO{
         // And return a reference to that connection
         return self::$conn;
     }
-
 }

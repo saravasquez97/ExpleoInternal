@@ -5,9 +5,13 @@
 <div class="container">
 <h2 id="SearchHead">Employee Search</h2>
 
-<?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ){
-echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
+  <?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ){
+    echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
 
+    else{
+  ?>
+  <!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
+  <hr>
 
 else{
 ?>
@@ -21,6 +25,7 @@ else{
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
+    <?php print_r($_SESSION['search_results']); ?>
   </div>
 </div>
 
