@@ -20,7 +20,7 @@ function queryUserBySkill($skill) {
     $rows = [];
     $i = 0;
     foreach($stmt as $row){
-      $rows[$i] = array($row['UID'],$row['name'],$skill);
+      $rows[$i] = array($row['UID'],$row['name'],$skill,$row['photo']);
       $i++;
     }
 
