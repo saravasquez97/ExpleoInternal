@@ -17,27 +17,27 @@ function queryUserBySkill($skill) {
     $stmt->bindParam(':skill',$skill,PDO::PARAM_STR);
     $stmt->execute();
 
-    $rows = [];
-    $i = 0;
-    foreach($stmt as $row){
-      $rows[$i] = array($row['UID'],$row['name'],$skill,$row['photo']);
-      $i++;
-    }
-
-    if(!empty($rows)){
-      return $rows;
-    }
-    else {
-      return null;
-    }
-
-    // $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // if($result){
-    //   print_r($result);
+    // $rows = [];
+    // $i = 0;
+    // foreach($stmt as $row){
+    //   $rows[$i] = array($row['UID'],$row['name'],$skill,$row['photo']);
+    //   $i++;
+    // }
+    //
+    // if(!empty($rows)){
+    //   return $rows;
     // }
     // else {
-    //   return "That query DNE";
+    //   return null;
     // }
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if($result){
+      print_r($result);
+    }
+    else {
+      return "That query DNE";
+    }
 
   } catch (Exception $e) {
     throw ($e);
