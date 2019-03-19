@@ -4,10 +4,10 @@
    *
    *
    */
-  session_start();
-
-
-
+   if(!isset($_SESSION))
+     {
+         session_start();
+     }
 ?>
 
 
@@ -70,10 +70,21 @@
           <li class="nav-item">
             <a class="nav-link" href="../profile/profile_controller.php">Profile</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../groups/groups_view.php">Groups</a>
-          </li>
-            <?php
+	  <?php
+	  	if($_SESSION['role'] == "SALES"){
+			echo "
+			  <li class=\"nav-item\">
+			    <a class=\"nav-link\" href=\"../search/search_controller.php\">Employee Search</a>
+			  </li>
+			";
+		}
+		else{
+			echo"
+          		  <li class=\"nav-item\">
+			    <a class=\"nav-link\" href=\"../groups/groups_view.php\">Groups</a>
+			  </li>
+			";
+		}
                 if($_SESSION['role'] == "SUPERUSER" || $_SESSION['role'] == "ADMIN" || $_SESSION['role'] == "SUPERADMIN"){
                     echo "
                       <li class=\"nav-item\">
@@ -96,6 +107,4 @@
           </form>
       </div>
     </nav>
-
-
-
+    <?php ?>

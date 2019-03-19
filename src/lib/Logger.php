@@ -86,7 +86,7 @@ class Logger
 	public function log_debug($msg, $filename="Logger")
     {
 
-        if (LOG_LEVEL != "DEBUG"){
+        if ('LOG_LEVEL' != "DEBUG"){
             return true;
         } else {
             $this->prefix = "DEBUG";
@@ -102,7 +102,7 @@ class Logger
 	public static function getInstance()
     {
 		// Check is $_instance has been set
-        if(!isset(self::$instance)) 
+        if(!isset(self::$instance))
         {
             // Creates sets object to instance
             self::$instance = new Logger();
@@ -111,4 +111,3 @@ class Logger
         return self::$instance;
 	}
 }
-
