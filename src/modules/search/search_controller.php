@@ -1,6 +1,10 @@
 <?php
 
 require_once("search_model.php");
+if(!isset($_SESSION))
+    {
+        session_start();
+    }
 
 $_SESSION['errorMessage'] = null;
 
@@ -11,7 +15,7 @@ if(isset($_POST['user_skill'])) {
     // print_r($_SESSION['search_results']);
     // print_r($user_with_skill);
     #header("Location: search_view.php");
-    header("Location: search_view.php");
+    include("search_view.php");?>
 	<div class="container">
 	<hr>
 	<form class="form-horizontal" id="testResults" action="search_controller.php" method="post">
@@ -20,7 +24,7 @@ if(isset($_POST['user_skill'])) {
 	<input id="TestCompare" type="submit" name="compare" value="Compare" class="btn btn-primary" style="margin-left: auto;">
 	</div>
 	<table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
-	foreach($user_with_skill as $row) : ?>
+	<?php foreach($user_with_skill as $row) : ?>
 	<tr>
 		<?php $photo = $row['photo'];
 		echo "<td style='border-top: 1px solid #ddd;
@@ -47,7 +51,7 @@ if(isset($_POST['user_skill'])) {
 			   font-size: 20px;'
 			   bgcolor='#006a66'
 			   align='center'>
-			   <?php echo $row['skill']; ?>
+			   <?php echo $skill; ?>
 		</td>
 		<?php
 		$checkval = intval($row['userID']);
@@ -64,14 +68,14 @@ if(isset($_POST['user_skill'])) {
 		      </td>";
 		?>
 	</tr>
-	<?php endforeach; ?>
+	<?php endforeach;?>
 	</table>
 	</form>
 	</div>
-}
+<?php }
 else {
   header("Location: search_view.php");
+  echo "TESTB";
   exit();
 }
-
 ?>

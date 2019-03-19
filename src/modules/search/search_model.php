@@ -8,8 +8,8 @@ function queryUserBySkill($skill) {
   try {
     $base = Connector::getDatabase();
 
-    $sql = "SELECT u.UID, CONCAT(u.first_name,' ',u.last_name) AS name,
-			  IFNULL(user.photo, '../../../assets/images/uploads/NoUpload.png') AS photo
+    $sql = "SELECT u.UID AS userID, CONCAT(u.first_name,' ',u.last_name) AS name,
+			  IFNULL(u.photo, '../../../assets/images/uploads/NoUpload.png') AS photo
 	 		  FROM user AS u WHERE u.UID IN
               (SELECT uss.user_id FROM
                 user_software_skills AS uss JOIN software_skills AS ss
