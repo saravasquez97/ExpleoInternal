@@ -6,7 +6,10 @@
  * Time: 7:47 PM
  */
 
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 
 ?>
 

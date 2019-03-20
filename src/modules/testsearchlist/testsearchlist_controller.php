@@ -7,7 +7,10 @@
  */
 
 require_once("testsearchlist_model.php");
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 if(!isset($_POST['hidden'])){
     include("testsearchlist_view.php");

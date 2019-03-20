@@ -1,9 +1,12 @@
 <?php
 /**
- * 
+ *
  */
 
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 require_once('verify_controller.php');
 
 ?>

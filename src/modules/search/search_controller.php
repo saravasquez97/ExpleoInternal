@@ -2,9 +2,9 @@
 
 require_once("search_model.php");
 if(!isset($_SESSION))
-    {
-        session_start();
-    }
+{
+    session_start();
+}
 
 $_SESSION['errorMessage'] = null;
 

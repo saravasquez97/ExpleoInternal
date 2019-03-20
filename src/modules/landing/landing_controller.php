@@ -4,7 +4,10 @@
  * @author Stephen Ritchie <stephen.ritchie@uky.edu>
  */
 
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 
 require_once ("../../lib/Logger.php");
 require_once ("../../lib/FeatureLoader.php");

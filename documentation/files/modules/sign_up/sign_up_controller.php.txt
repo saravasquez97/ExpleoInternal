@@ -9,7 +9,10 @@
 require_once("sign_up_model.php");
 require_once("../../lib/EmailServices.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 $_SESSION['errorMessage'] = null;
 
@@ -117,4 +120,3 @@ function error($message){
     header("Location: sign_up_view.php");
     exit();
 }
-

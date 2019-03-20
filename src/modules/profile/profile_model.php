@@ -8,7 +8,10 @@
 
 require_once ("../../lib/Connector.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 
 
@@ -91,9 +94,9 @@ function updateUser($post){
     $state = $post['state'];
     $zip = $post['zip'];
 
-    $sql = "UPDATE user 
-            SET first_name = '$first', 
-                last_name = '$last', 
+    $sql = "UPDATE user
+            SET first_name = '$first',
+                last_name = '$last',
                 gender = '$gender',
                 dateofbirth = '$dob',
                 address = '$address',

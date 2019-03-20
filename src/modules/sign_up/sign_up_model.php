@@ -8,7 +8,10 @@
 
 require_once ("../../lib/Connector.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 /**
  * gets all user data
@@ -34,15 +37,15 @@ function newUser($data){
 	}
 
         $sql = "INSERT INTO user (
-                    first_name, 
-                    last_name, 
-                    email, 
+                    first_name,
+                    last_name,
+                    email,
                     password,
 		    role
                     ) VALUES (
-                    '$first', 
-                    '$last', 
-                    '$email', 
+                    '$first',
+                    '$last',
+                    '$email',
                     '$pass',
 		    '$sales');";
         $stmt = $base->prepare($sql);

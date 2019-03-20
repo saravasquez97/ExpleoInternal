@@ -5,7 +5,10 @@
  * Date: 10/25/18
  * Time: 2:08 AM
  */
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 
 include("../../views/header.php");
 ?>

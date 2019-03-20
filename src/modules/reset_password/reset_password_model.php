@@ -8,13 +8,16 @@
 
 require_once ("../../lib/Connector.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 function change($uid, $temp){
 
     $base = Connector::getDatabase();
 
-    $sql = "UPDATE user 
+    $sql = "UPDATE user
             SET password = '$temp'
             WHERE uid = '$uid'";
 
