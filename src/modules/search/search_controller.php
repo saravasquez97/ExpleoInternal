@@ -15,19 +15,22 @@ if(isset($_POST['user_skill'])) {
     // print_r($_SESSION['search_results']);
     // print_r($user_with_skill);
     #header("Location: search_view.php");
-    include("search_view.php");?>
-	<div class="container">
-	<hr>
-	<form class="form-horizontal" id="testResults" action="search_controller.php" method="post">
-	<div class="container" style='display:flex;'>
-	<h1>Search Results</h1>
-	<input id="TestCompare" type="submit" name="compare" value="Compare" class="btn btn-primary" style="margin-left: auto;">
-	</div>
-	<table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
-	<?php foreach($user_with_skill as $row) : ?>
-	<tr>
-		<?php $photo = $row['photo'];
-		echo "<td style='border-top: 1px solid #ddd;
+    include("search_view.php");?> <!-- I DON'T KNOW IF THIS IS THE BEST WAY...FOOTER LOOKS WEIRD-->
+
+	  <form class="form-horizontal" id="testResults" action="compare_controller.php" method="post">
+	  <div class="container" style='display:flex;'>
+	     <h2>Search Results</h2>
+       <button id="TestCompare" type="submit" form="testResults" name="compare" value="Compare"
+          class="btn btn-primary" style="margin-left: auto;">Compare</button>
+	        <!--<input id="TestCompare" type="submit" name="compare" value="Compare" class="btn btn-default" style="margin-left: auto;">-->
+	  </div>
+
+    <div class="container">
+	  <table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
+	      <?php foreach($user_with_skill as $row) : ?>
+	      <tr>
+		    <?php $photo = $row['photo'];
+		    echo "<td style='border-top: 1px solid #ddd;
 			   border-left: 1px solid #ddd;
 			   border-bottom: 1px solid #ddd;
 			   border-radius: 10px 0 0 10px;
@@ -36,7 +39,7 @@ if(isset($_POST['user_skill'])) {
 			   bgcolor='#006a66'
 			   align='center'>
 			   <img src='$photo' alt='No Photo' height='42' width='50' style='margin: 5px 0;'>
-		</td>"; ?>
+		     </td>"; ?>
 		<td style='border-top: 1px solid #ddd;
 			   border-bottom: 1px solid #ddd;
 			   color: #ffffff;
@@ -67,15 +70,15 @@ if(isset($_POST['user_skill'])) {
 				Add
 		      </td>";
 		?>
-	</tr>
-	<?php endforeach;?>
-	</table>
-	</form>
-	</div>
+	  </tr>
+	  <?php endforeach;?>
+	  </table>
+	  </form>
+    </div>
+
 <?php }
 else {
   header("Location: search_view.php");
-  echo "TESTB";
   exit();
 }
 ?>

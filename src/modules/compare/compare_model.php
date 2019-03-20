@@ -4,13 +4,13 @@ require_once ("../../lib/Connector.php");
 
 function showName($uid) {
 
-	try {	
-		$base = Connector::getDatabase();	
+	try {
+		$base = Connector::getDatabase();
 		$sql = "SELECT first_name, last_name FROM user WHERE UID = '$uid';";
 		$stmt = $base->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->fetch();
-		echo $result[first_name] . " " .$result[last_name];
+		echo $result['first_name'] . " " .$result['last_name'];
 	}
 	catch (Exception $e) {throw ($e);}
 }
@@ -25,12 +25,12 @@ function showBasic($uid, $show_basic){
                 $stmt->execute();
 		$result = $stmt->fetch();
 		echo "Basic Information:<br>";
-		echo "Email: " .$result[email] ."<br>"; 
-		echo "Gender: " .$result[gender] ."<br>" ; 
-		echo "Location: " .$result[city] .", " .$result[state]; 
+		echo "Email: " .$result['email'] ."<br>";
+		echo "Gender: " .$result['gender'] ."<br>" ;
+		echo "Location: " .$result['city'] .", " .$result['state'];
         }
         catch (Exception $e) {throw ($e);}
-	
+
 	}
 }
 
@@ -60,7 +60,7 @@ function showHard($uid, $show_hard){
         {
                 try {
 		$base = Connector::getDatabase();
-			
+
                 $sql = "SELECT skill FROM user_hardware_skills join hardware_skills ON user_hardware_skills.skill_id = hardware_skills.UID WHERE user_id = '$uid';";
                 $stmt = $base->prepare($sql);
                 $stmt->execute();
@@ -77,4 +77,3 @@ function showHard($uid, $show_hard){
 }
 //showHard(6, true);
 ?>
-

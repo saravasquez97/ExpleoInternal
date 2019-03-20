@@ -31,7 +31,7 @@
     <footer class="footer bg-dark">
       <div class="container">
         <span class="text-muted">Copyright &copy; <?php echo date("Y"); ?> SQS. All rights reserved.</span>
-        <span class="text-muted float-right"><?php echo VERSION." ".ENV; ?></span>
+        <span class="text-muted float-right"><?php echo 'VERSION'." ".'ENV'; ?></span>
       </div>
     </footer>
 
