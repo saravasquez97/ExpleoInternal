@@ -28,7 +28,7 @@ class ConfigurationInterface
      */
     public function getSystemConfig()
     {
-        $filename = __DIR__."/../../config/".$this->config_filename;
+        $filename = __DIR__."/../../src/config/".$this->config_filename;
 
         if (file_exists($filename)){
             $ini = parse_ini_file($filename, true);

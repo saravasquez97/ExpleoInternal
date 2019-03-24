@@ -67,9 +67,6 @@
           <li class="nav-item">
             <a class="nav-link" href="../landing/landing_controller.php">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../profile/profile_controller.php">Profile</a>
-          </li>
 	  <?php
 	  	if($_SESSION['role'] == "SALES"){
 			echo "
@@ -85,6 +82,11 @@
 			  </li>
 			";
 		}
+    if($_SESSION['role'] != "SALES"){
+      echo "<li class=\"nav-item\">
+            <a class=\"nav-link\" href=\"../profile/profile_controller.php\">Profile</a>
+          </li>";
+    }
                 if($_SESSION['role'] == "SUPERUSER" || $_SESSION['role'] == "ADMIN" || $_SESSION['role'] == "SUPERADMIN"){
                     echo "
                       <li class=\"nav-item\">
