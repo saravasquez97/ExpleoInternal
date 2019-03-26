@@ -71,7 +71,7 @@
             <a class="nav-link" href="../profile/profile_controller.php">Profile</a>
           </li>
 	  <?php
-	  	if($_SESSION['role'] == "SALES"){
+	  	if($_SESSION['role'] == "SALES" or $_SESSION['role'] == "ADMIN" or $_SESSION['role'] == "SUPERADMIN"){
 			echo "
 			  <li class=\"nav-item\">
 			    <a class=\"nav-link\" href=\"../search/search_controller.php\">Employee Search</a>
