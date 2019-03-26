@@ -21,7 +21,21 @@ else{
 <?php
 
 
-Create_Cards();
+if(isset($_POST['compare']))
+{
+  if (isset($_POST['selected_compare']))
+  {
+	   $user_ids = $_POST['selected_compare'];
+     Create_Cards($user_ids);
+  } else {
+    echo "<div class='container'><h3> Error: No users selected on Employee Search page. </h3></div>";
+  }
+} else {
+  echo "<div class='container'><h3> Error: No users selected on Employee Search page. </h3></div>";
+}
+
+
+
 }
 
 ?>

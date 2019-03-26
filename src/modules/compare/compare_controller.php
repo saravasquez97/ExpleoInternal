@@ -1,12 +1,13 @@
 <?php
 include("compare_model.php");
 
-function Create_Cards(){
+function Create_Cards($uid){
 	//get user ids
-	$uid = [24,1,6,4,8];
+
 
 	//put cards in overall container and start list for cards
 	?> <div class="container horizontal-scroll">
+			<div class="row">
 				<u1 class="list-inline"> <?php
 
 				//make card for every user id
@@ -18,7 +19,8 @@ function Create_Cards(){
 					</li>
 					<?php
 				}
-	?> </div> <?php
+	?> </div>
+		</div> <?php
 }
 
 function individualCard($user) {

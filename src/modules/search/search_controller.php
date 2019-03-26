@@ -8,15 +8,7 @@ if(!isset($_SESSION))
 
 $_SESSION['errorMessage'] = null;
 
-if(isset($_POST['compare']))
-{
-	$user_to_compare = $_POST['selected_compare'];
-	foreach ($user_to_compare as $id){
-		echo $id."<br />";
-	}
-}
-
-elseif(isset($_POST['user_skill'])) {
+if(isset($_POST['user_skill'])) {
     $skill = $_POST['user_skill'];
     $user_with_skill = queryUserBySkill($skill);
     $_SESSION['search_results'] = $user_with_skill;
@@ -26,7 +18,7 @@ elseif(isset($_POST['user_skill'])) {
     include("search_view.php");?>
 	<div class="container">
 	<hr>
-	<form class="form-horizontal" id="choose_users" action="search_controller.php" target="_blank" method="post">
+	<form class="form-horizontal" id="choose_users" action="../compare/compare_view.php" target="_blank" method="post">
 	<div class="container" style='display:flex;'>
 		<h1>Search Results</h1>
 		<?php if (count($user_with_skill) > 0) { ?>
