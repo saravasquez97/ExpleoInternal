@@ -18,6 +18,7 @@ include("../../views/header.php");
             <?php
             if(!is_null($_SESSION['errorMessage'])){
                 $errorMessage = $_SESSION['errorMessage'];
+                $test = $_SESSION['softskills'][0];
                 echo "
                     <div class='alert alert-danger'>
                         $errorMessage
@@ -223,29 +224,14 @@ include("../../views/header.php");
 				<div class="software-skills-bank">
 					<label>Skill Bank</label>
 				    <select multiple="multiple" id='lstBoxSoftware1' class="form-control" disabled>
-						<option value="5">Ruby</option>
-                        <option value="43">C#</option>
-                        <option value="9">Perl</option>
-                        <option value="10">Graphics</option>
-                        <option value="13">.NET</option>
-                        <option value="14">Visual Basic</option>
-                        <option value="15">Prolog</option>
-                        <option value="16">Animation</option>
-                        <option value="17">R</option>
-                        <option value="18">Swift</option>
-                        <option value="47">Assembly</option>
-                        <option value="20">Pascal</option>
-                        <option value="21">Go</option>
-                        <option value="25">Objective-C</option>
-                        <option value="27">MATLAB</option>
-                        <option value="28">SAS</option>
-                        <option value="29">Scratch</option>
-                        <option value="30">Cloud Computing</option>
-                        <option value="32">Enterprise Systems</option>
-                        <option value="33">Android</option>
-                        <option value="34">IOS/MAC OS X</option>
-                        <option value="35">Windows</option>
-                        <option value="36">Linux</option>
+                        <?php
+                            $softbanks = $_SESSION['softbank'];
+                            foreach($softbanks as $softbank){
+                                $skill_id = $softbank['UID'];
+                                $skill_name = $softbank['skill'];
+                                echo "<option value='$skill_id'>$skill_name</option>";
+                            }
+                        ?>
                     </select>
 				</div>
 				<div class="software-skills-arrows text-center">
@@ -256,20 +242,15 @@ include("../../views/header.php");
 				</div>
 				<div class="software-skills-personal">
 					<label>Your Skills</label>
-				    <select multiple="multiple" name="personalss[]" id='lstBoxSoftware2' class="form-control" disabled>
-						<option value="42">C</option>
-                        <option value="1">C++</option>
-                        <option value="37">Client/Server</option>
-                        <option value="24">CSS</option>
-                        <option value="23">HTML</option>
-                        <option value="6">Java</option>
-                        <option value="11">Javascript</option>
-                        <option value="31">Microsoft Office</option>
-                        <option value="46">PHP</option>
-                        <option value="3">Python</option>
-                        <option value="12">SQL</option>
-                        <option value="26">Shell</option>
-                        <option value="22">Web Design</option>
+				    <select multiple="multiple" name='softwareSkills[]'' id='lstBoxSoftware2' class="form-control" disabled>
+                        <?php
+                            $softbanks = $_SESSION['softskills'];
+                            foreach($softbanks as $softbank){
+                                $skill_id = $softbank['UID'];
+                                $skill_name = $softbank['skill'];
+                                echo "<option value='$skill_id'>$skill_name</option>";
+                            }
+                        ?>
                     </select>
 				</div>
 				<div class="clearfix">
@@ -282,17 +263,14 @@ include("../../views/header.php");
 				<div class="hardware-skills-bank">
 					<label>Skill Bank</label>
 				    <select multiple="multiple" id='lstBoxHardware1' class="form-control" disabled>
-						<option value="1">Computer Assembly</option>
-                        <option value="2">Computer Maintenance</option>
-                        <option value="4">Printer & Cartage Refilling</option>
-                        <option value="5">Operation Monitoring</option>
-                        <option value="6">Network Processing</option>
-                        <option value="7">Disaster Recovery</option>
-                        <option value="8">Circuit Design Knowledge</option>
-                        <option value="9">Systems Analysis</option>
-                        <option value="10">Installing Applications</option>
-                        <option value="11">Installing Components & Driver</option>
-                        <option value="12">Backup Management, Reporting &</option>
+                        <?php
+                            $hardbanks = $_SESSION['hardbank'];
+                            foreach($hardbanks as $hardbank){
+                                $skill_id = $hardbank['UID'];
+                                $skill_name = $hardbank['skill'];
+                                echo "<option value='$skill_id'>$skill_name</option>";
+                            }
+                        ?>
                     </select>
 				</div>
 				<div class="hardware-skills-arrows text-center">
@@ -303,8 +281,15 @@ include("../../views/header.php");
 				</div>
 				<div class="hardware-skills-personal">
 					<label>Your Skills</label>
-				    <select multiple="multiple" id='lstBoxHardware2' name="personalhs[]" class="form-control" disabled>
-						<option value="15">Troubleshooting</option>
+				    <select multiple="multiple" id='lstBoxHardware2' name='hardwareSkills[]' class="form-control" disabled>
+                        <?php
+                            $hardskills = $_SESSION['hardskills'];
+                            foreach($hardskills as $hardskill){
+                                $skill_id = $hardskill['UID'];
+                                $skill_name = $hardskill['skill'];
+                                echo "<option value='$skill_id'>$skill_name</option>";
+                            }
+                        ?>
                     </select>
 				</div>
 				<div class="clearfix"></div>

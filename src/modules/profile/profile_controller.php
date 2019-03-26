@@ -32,6 +32,10 @@ if(isset($_POST['first_name'])){
     $_SESSION['zip'] = $data['zip'];
 
     $_SESSION['numbers'] = getPhones();
+    getSoftware();
+    getSoftwareBank();
+    getHardware();
+    getHardwareBank();
 
     getGroup();
 
@@ -60,6 +64,10 @@ if(isset($_POST['first_name'])){
         $_SESSION['zip'] = $data['zip'];
         $_SESSION['numbers'] = getPhones();
         $_SESSION['progress'] = $data['progress'];
+        getSoftware();
+        getSoftwareBank();
+        getHardware();
+  		getHardwareBank();
         getGroup();
 
 
@@ -99,6 +107,10 @@ function updateUserInfo(){
         if(empty($_POST['phone_number3'])){
             deleteNumber($_SESSION['numbers'][3][0]);
         }
+    }catch(Exception $e){}
+
+    try{
+    	updateSkills($_POST);
     }catch(Exception $e){}
 
     if(!updateUser($_POST)) {
@@ -194,4 +206,24 @@ function getPhone(){
     $data = getPhones();
     return $data;
 
+}
+
+function getSoftware(){
+	$data = getSoftSkills();
+	$_SESSION['softskills'] = $data;
+}
+
+function getHardware(){
+	$data = getHardSkills();
+	$_SESSION['hardskills'] = $data;
+}
+
+function getSoftwareBank(){
+	$data = getSoftBank();
+	$_SESSION['softbank'] = $data;
+}
+
+function getHardwareBank(){
+	$data = getHardBank();
+	$_SESSION['hardbank'] = $data;
 }
