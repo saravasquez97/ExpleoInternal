@@ -8,7 +8,10 @@
 
 require_once("sign_in_model.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 $_SESSION['errorMessage'] = null;
 
@@ -19,7 +22,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 
     //echo "here";
 
-    // error checking 
+    // error checking
     sanitized();
 
     noneMissing();

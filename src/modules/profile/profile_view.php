@@ -6,7 +6,10 @@
  * Time: 2:08 AM
  */
 
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 
 include("../../views/header.php");
 ?>

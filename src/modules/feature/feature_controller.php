@@ -6,7 +6,10 @@
  * Time: 20:04
  */
 require_once('feature_model.php');
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 if($_SESSION['role'] == "SUPERUSER" || $_SESSION['role'] == "ADMIN" || $_SESSION['role'] == "SUPERADMIN"){
     if(isset($_POST['apply'])){

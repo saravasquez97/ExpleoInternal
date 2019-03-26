@@ -6,7 +6,10 @@
  * Time: 20:04
  */
 include('../../views/header.php');
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 //print("<pre>".print_r($_SESSION,true)."</pre>");
 ?>
 
@@ -152,4 +155,3 @@ session_start();
 <?php
     include('../../views/footer.php');
 ?>
-

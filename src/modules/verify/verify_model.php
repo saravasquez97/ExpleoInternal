@@ -3,7 +3,10 @@
 require_once ("../../lib/Connector.php");
 require_once ("../../lib/Logger.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+		session_start();
+}
 
 
 
@@ -12,7 +15,7 @@ function getStatusPage($email, $hash){
 	if (activateAccount($email, $hash)){
 		include ("success.html");
 	} else {
-		include ("failure.html"); 
+		include ("failure.html");
 	}
 }
 
@@ -67,7 +70,7 @@ function hashesMatch($email, $hash){
 		$stmt = $base->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->fetch();
-		
+
 		if ($result['hash'] == $hash){
 			return True;
 		} else {

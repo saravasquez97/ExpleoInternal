@@ -8,8 +8,10 @@
 
 require_once ("../../lib/Connector.php");
 
-
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 
 
@@ -92,9 +94,9 @@ function updateUser($post){
     $state = $post['state'];
     $zip = $post['zip'];
 
-    $sql = "UPDATE user 
-            SET first_name = '$first', 
-                last_name = '$last', 
+    $sql = "UPDATE user
+            SET first_name = '$first',
+                last_name = '$last',
                 gender = '$gender',
                 dateofbirth = '$dob',
                 address = '$address',
@@ -136,18 +138,18 @@ function updateSkills($post){
 
 
     foreach($software_skills as $software_skill){
-        $sql = "INSERT INTO user_software_skills (skill_id, user_id) 
+        $sql = "INSERT INTO user_software_skills (skill_id, user_id)
                 VALUES ('$software_skill', '$uid')";
         $stmt = $base->prepare($sql);
         $stmt->execute();
     }
 
     foreach($hardware_skills as $hardware_skill){
-        $sql = "INSERT INTO user_hardware_skills (skill_id, user_id) 
+        $sql = "INSERT INTO user_hardware_skills (skill_id, user_id)
                 VALUES ('$hardware_skill', '$uid')";
         $stmt = $base->prepare($sql);
         $stmt->execute();
-    }    
+    }
 
 }
 
@@ -176,8 +178,8 @@ function getSoftSkills(){
 
     $uid = $_SESSION['uid'];
 
-    $sql = "SELECT S.UID, skill 
-            FROM (user_software_skills as U JOIN software_skills as S ON U.skill_id = S.UID) 
+    $sql = "SELECT S.UID, skill
+            FROM (user_software_skills as U JOIN software_skills as S ON U.skill_id = S.UID)
             WHERE user_id = '$uid';";
 
     $stmt = $base->prepare($sql);
@@ -192,8 +194,8 @@ function getHardSkills(){
 
     $uid = $_SESSION['uid'];
 
-    $sql = "SELECT S.UID, skill 
-            FROM (user_hardware_skills as U JOIN hardware_skills as S ON U.skill_id = S.UID) 
+    $sql = "SELECT S.UID, skill
+            FROM (user_hardware_skills as U JOIN hardware_skills as S ON U.skill_id = S.UID)
             WHERE user_id = '$uid';";
 
     $stmt = $base->prepare($sql);
@@ -209,8 +211,8 @@ function getSoftBank(){
     $uid = $_SESSION['uid'];
 
     $sql = "SELECT UID, skill FROM software_skills
-            WHERE skill NOT IN (SELECT skill 
-            FROM (user_software_skills as U JOIN software_skills as S ON U.skill_id = S.UID) 
+            WHERE skill NOT IN (SELECT skill
+            FROM (user_software_skills as U JOIN software_skills as S ON U.skill_id = S.UID)
             WHERE user_id = '$uid');";
 
     $stmt = $base->prepare($sql);
@@ -226,8 +228,8 @@ function getHardBank(){
     $uid = $_SESSION['uid'];
 
     $sql = "SELECT UID, skill FROM hardware_skills
-            WHERE skill NOT IN (SELECT skill 
-            FROM (user_hardware_skills as U JOIN hardware_skills as S ON U.skill_id = S.UID) 
+            WHERE skill NOT IN (SELECT skill
+            FROM (user_hardware_skills as U JOIN hardware_skills as S ON U.skill_id = S.UID)
             WHERE user_id = '$uid');";
 
     $stmt = $base->prepare($sql);

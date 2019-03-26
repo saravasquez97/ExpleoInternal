@@ -3,7 +3,10 @@
 require_once ("Connector.php");
 require_once ("Logger.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 /**
  * The FeatureLoader is responsible for allowing the serving of "bugged" or "errored" pages to a user.  When one of
@@ -113,10 +116,10 @@ class FeatureLoader
                 $sql = "SELECT name FROM features_available WHERE version='0' AND feature_group_name='$feature';";
 
             } else {
-                $sql = "SELECT features_available.version, features_available.name 
-                        FROM features_available 
-                        JOIN assigned_features 
-                        ON features_available.id = assigned_features.feature_number 
+                $sql = "SELECT features_available.version, features_available.name
+                        FROM features_available
+                        JOIN assigned_features
+                        ON features_available.id = assigned_features.feature_number
                         WHERE assigned_features.user_id = '$UID' AND features_available.feature_group_name = '$feature';";
             }
 
@@ -145,4 +148,3 @@ class FeatureLoader
         return self::$instance;
     }
 }
-

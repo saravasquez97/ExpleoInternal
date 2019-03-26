@@ -8,7 +8,10 @@
 
 require_once("change_password_model.php");
 
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 sanitized();
 

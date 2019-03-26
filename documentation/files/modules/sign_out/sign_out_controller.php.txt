@@ -6,7 +6,10 @@
  * Time: 8:02 PM
  */
 
-session_start();
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 
 // destroy session variable
 session_destroy();

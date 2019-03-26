@@ -7,7 +7,10 @@
  */
 
 require_once("profile_model.php");
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 if(isset($_POST['first_name'])){
     //saving data
