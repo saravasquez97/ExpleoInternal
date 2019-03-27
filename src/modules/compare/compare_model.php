@@ -2,7 +2,7 @@
 <?php
 require_once ("../../lib/Connector.php");
 
-function showName($uid) {
+function getName($uid) {
 
 	try {
 		$base = Connector::getDatabase();
@@ -10,33 +10,34 @@ function showName($uid) {
 		$stmt = $base->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->fetch();
-		echo $result['first_name'] . " " .$result['last_name'];
+		//echo $result['first_name'] . " " .$result['last_name'];
+		return $result;
 	}
 	catch (Exception $e) {throw ($e);}
 }
 
-function showBasic($uid, $show_basic){
-	if($show_basic) {
-		try {
-    	$base = Connector::getDatabase();
-      $sql = "SELECT email, gender, city, state FROM user WHERE UID = '$uid';";
+function getBasic($uid){
+	 
+	try {
+    		$base = Connector::getDatabase();
+      		$sql = "SELECT email, gender, city, state FROM user WHERE UID = '$uid';";
 
-      $stmt = $base->prepare($sql);
-      $stmt->execute();
-			$result = $stmt->fetch();
-			echo "<hr>";
-			echo "<strong>Email:</strong> " .$result['email'] ."<br>";
-			echo "<strong>Gender:</strong> " .$result['gender'] ."<br>" ;
-			echo "<strong>Location:</strong> " .$result['city'] .", " .$result['state'];
-    } catch (Exception $e) {
-				throw ($e);
-			}
+      		$stmt = $base->prepare($sql);
+     		$stmt->execute();
+		$result = $stmt->fetch();
+      		return $result;
+      		//	echo "<hr>";
+		//	echo "<strong>Email:</strong> " .$result['email'] ."<br>";
+		//	echo "<strong>Gender:</strong> " .$result['gender'] ."<br>" ;
+		//	echo "<strong>Location:</strong> " .$result['city'] .", " .$result['state'];
+	} catch (Exception $e) 
+	{
+		throw ($e);
 	}
+	
 }
 
-//showBasic(4, true);
-function showSoft($uid, $show_soft){
-	if($show_soft) {
+function getSoft($uid){
   	try {
   		$base = Connector::getDatabase();
   		$sql = "SELECT skill FROM user_software_skills AS uss
@@ -47,27 +48,24 @@ function showSoft($uid, $show_soft){
 
   		$stmt = $base->prepare($sql);
   		$stmt->execute();
-			$result = $stmt->fetchAll();
-
-			if ($result) {
-				$MAX_SKILLS_LIST = 5;
-				echo "<hr>";
-				echo "<strong>Top Software Skills:</strong><br>";
-				for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
-				{
-					echo $result[$i][0] ."<br>";
-				}
-				if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
-			}
+		$result = $stmt->fetchAll();
+		return $result;	
+		//	if ($result) {
+		//		$MAX_SKILLS_LIST = 5;
+		//		echo "<hr>";
+		//		echo "<strong>Top Software Skills:</strong><br>";
+		//		for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
+		//		{
+		//			echo $result[$i][0] ."<br>";
+		//		}
+		//		if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
+		//	}
   	} catch (Exception $e) {
-				throw ($e);
-			}
-    }
+				throw ($e);}
 }
 
-function showHard($uid, $show_hard){
-	if($show_hard) {
-  	try {
+function getHard($uid){
+  try {
 			$base = Connector::getDatabase();
       $sql = "SELECT skill FROM user_hardware_skills
 						  JOIN hardware_skills
@@ -78,21 +76,21 @@ function showHard($uid, $show_hard){
       $stmt = $base->prepare($sql);
       $stmt->execute();
       $result = $stmt->fetchAll();
-
-			if ($result) {
-				$MAX_SKILLS_LIST = 5;
-				echo "<hr>";
-        echo "<strong>Top Hardware Skills:</strong><br>";
-        for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
-        {
-        	echo $result[$i][0] ."<br>";
-        }
-				if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
-			}
+	return $result;
+		//	if ($result) {
+		//		$MAX_SKILLS_LIST = 5;
+		//		echo "<hr>";
+      //  echo "<strong>Top Hardware Skills:</strong><br>";
+       // for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
+       // {
+        //	echo $result[$i][0] ."<br>";
+       // }
+	//			if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
+	//		}
     } catch (Exception $e) {
 				throw ($e);
 			}
-		}
+		
 }
 //showHard(6, true);
 ?>
