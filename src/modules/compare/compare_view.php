@@ -71,7 +71,9 @@ function individualCard($user) {
 <div class="card" style="width: 22rem;">
         <!---<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
                 <div class="card-body">
-                        <h5 class="card-title"> <?php echo showName($user); ?></h5>
+			<h5 class="card-title"> <?php echo showName($user); ?> 
+			<button type="button" class="close">&times;</span></button>
+			</h5>
                         <p class="card-text"><?php echo showBasic($user, $show_basic);?></p>
                         <p class="cared-text"><?php echo showSoft($user, $show_soft);?></p>
                         <p class="cared-text"><?php echo showHard($user, $show_hard);?></p>
@@ -82,5 +84,6 @@ function individualCard($user) {
 
 <?php
 }    
+
 	include('../../views/footer.php');
 ?>
