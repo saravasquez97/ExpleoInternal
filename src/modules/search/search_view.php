@@ -9,12 +9,13 @@
     <?php
       if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
       {
-        echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
+        echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div><hr></div></div>";}
       else{
     ?>
   <!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
 <!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
     <hr>
+</div>
 </div>
 <div class="container">
     <div class = "text-center">

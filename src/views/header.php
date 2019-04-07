@@ -94,6 +94,13 @@
                       </li>
                     ";
                 }
+                if($_SESSION['role'] == "ADMIN" || $_SESSION['role'] == "SUPERADMIN"){
+                  echo "
+                      <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"../sales_verify/sales_verify_controller.php\">Verify Users</a>
+                      </li>
+                    ";
+                }
             ?>
           <li class="nav-item">
             <a class="nav-link" href="https://www.sqs.com/en/index.php" target="_blank">Corporate Site</a>
