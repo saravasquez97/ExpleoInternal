@@ -36,6 +36,14 @@ if(isset($_POST['compare']))
 }
 
 function Create_Cards($uid){
+  //figure out if skill is hard or soft skill_id
+  $searched_skill = $_POST['skill'];
+  $searched_sskill = NULL;
+  $searched_hskill = NULL;
+  
+  if (isSoftSkill($searched_skill)){ $searched_sskill = $searched_skill; }
+  else { $searched_hskill = $searched_skill; }
+
         //get user ids
 
 
@@ -49,7 +57,7 @@ function Create_Cards($uid){
                         {
                             ?>
                             <li class = "list-inline-item">
-                                <?php individualCard($uid[$i]); ?>
+                                <?php individualCard($uid[$i], $searched_sskill, $searched_hskill); ?>
                             </li>
                             <?php
                           } ?>
@@ -57,7 +65,7 @@ function Create_Cards($uid){
             </div> <?php
 }
 
-function individualCard($user) {
+function individualCard($user, $searched_sskill, $searched_hskill) {
 
         //set booleans for display to be true
         //change later for added functionality of hiding sections
@@ -68,14 +76,14 @@ function individualCard($user) {
         $show_hard = true;
 ?>
 
+
 <div class="card" style="width: 22rem;">
-    <!---<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
     <div class="card-body">
         <div style="height:auto"><h5 class="card-title"> <?php echo showName($user); ?></h5></div>
         <div style="height:auto"><?php echo showPhoto($user, $show_photo); ?></div>
         <div style="height:auto"><p class="card-text"><?php echo showBasic($user, $show_basic);?></p></div>
-        <div style="height:11.5rem"><p class="card-text"><?php echo showSoft($user, $show_soft);?></p></div>
-        <div style="height:11.5rem"><p class="card-text"><?php echo showHard($user, $show_hard);?></p></div>
+        <div style="height:11.5rem"><p class="card-text"><?php echo showSoft($user, $show_soft, $searched_sskill);?></p></div>
+        <div style="height:11.5rem"><p class="card-text"><?php echo showHard($user, $show_hard, $searched_hskill);?></p></div>
         <!---<a href="#" class="btn btn-primary">Go somewhere</a>-->
     </div>
 </div>
