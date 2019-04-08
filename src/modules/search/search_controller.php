@@ -37,7 +37,7 @@ if(isset($_POST['user_skill'])) {
 				   font-size: 20px;'
 				   bgcolor='#006a66'
 				   align='center'>
-				   <img src='$photo' alt='No Photo' height='42' width='50' style='margin: 5px 0;'>
+				   <img src='$photo' alt='No Photo' height='42' style='margin: 5px 0;'>
 			</td>"; ?>
 			<td style='border-top: 1px solid #ddd;
 				   border-bottom: 1px solid #ddd;

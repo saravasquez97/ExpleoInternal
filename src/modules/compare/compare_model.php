@@ -16,25 +16,34 @@ function getName($uid) {
 	catch (Exception $e) {throw ($e);}
 }
 
+function getPhoto($uid) {
+
+	try {
+		$base = Connector::getDatabase();
+		$sql = "SELECT IFNULL(photo, '../../../assets/images/uploads/NoUpload.png') AS photo FROM user WHERE UID = '$uid';";
+		$stmt = $base->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetch();
+		return $result;
+	}
+	catch (Exception $e) {throw ($e);}
+}
+
 function getBasic($uid){
-	 
+
 	try {
     		$base = Connector::getDatabase();
-      		$sql = "SELECT email, gender, city, state FROM user WHERE UID = '$uid';";
+      	$sql = "SELECT email, gender, city, state FROM user WHERE UID = '$uid';";
 
-      		$stmt = $base->prepare($sql);
+      	$stmt = $base->prepare($sql);
      		$stmt->execute();
-		$result = $stmt->fetch();
-      		return $result;
-      		//	echo "<hr>";
-		//	echo "<strong>Email:</strong> " .$result['email'] ."<br>";
-		//	echo "<strong>Gender:</strong> " .$result['gender'] ."<br>" ;
-		//	echo "<strong>Location:</strong> " .$result['city'] .", " .$result['state'];
-	} catch (Exception $e) 
+				$result = $stmt->fetch();
+      	return $result;
+	} catch (Exception $e)
 	{
 		throw ($e);
 	}
-	
+
 }
 
 function getSoft($uid){
@@ -49,7 +58,7 @@ function getSoft($uid){
   		$stmt = $base->prepare($sql);
   		$stmt->execute();
 		$result = $stmt->fetchAll();
-		return $result;	
+		return $result;
 		//	if ($result) {
 		//		$MAX_SKILLS_LIST = 5;
 		//		echo "<hr>";
@@ -90,7 +99,7 @@ function getHard($uid){
     } catch (Exception $e) {
 				throw ($e);
 			}
-		
+
 }
 //showHard(6, true);
 ?>
