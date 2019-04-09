@@ -94,7 +94,26 @@ function isSoftSkill($searched_skill) {
 }
 
 function showUserInfo($user) {
-
+	$result = getUserInfo($user);
+	echo "<h4>".$result['first_name'] . " " .$result['last_name']."</h4>";
+	echo "<div class='profile-modal'>";
+		echo $result['email']."<br>";
+		echo $result['address'].", ".$result['city'].", ".$result['state']." ".$result['zip'];
+	echo "</div>";
+	echo "<div class='profile-modal'>";
+		echo "<div class='row'>";
+			echo "<div class='col-sm-2'>";
+				echo "<p><strong>Role: </strong></p>";
+				echo "<p><strong>Gender: </strong></p>";
+				echo "<p><strong>Birthday: </strong></p>";
+			echo "</div>";
+			echo "<div class='col-sm-10'>";
+				echo "<p>".$result['role']."</p>";
+				echo "<p>".$result['gender']."</p>";
+				echo "<p>".$result['dateofbirth']."</p>";
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
 }
 
 ?>

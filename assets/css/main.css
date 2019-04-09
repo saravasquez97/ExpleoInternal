@@ -374,5 +374,14 @@ select:disabled {
 
 .profile-modal {
 	height: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 1em;
+}
+
+.profile-modal p {
+	margin-bottom: 5px;
+}
+
+.modal-body {
+    position: relative;
+    overflow-y: auto;
 }

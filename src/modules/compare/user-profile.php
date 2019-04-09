@@ -24,10 +24,10 @@ else{
          <div class="profile-modal" name="photo-div"><?php echo showPhoto($user, $show_photo); ?></div>
        </div>
        <div class="col-sm-9">
-         <div class="profile-modal" name="name-div">Test Name</div>
+         <div class="profile-modal" name="name-div"><?php echo showUserInfo($user); ?></div>
        </div>
      </div>
-     
+
      <hr>
 
      <div class="row">
