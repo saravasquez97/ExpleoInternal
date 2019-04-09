@@ -16,14 +16,13 @@ if(isset($_POST['user_skill'])) {
     // print_r($user_with_skill);
     #header("Location: search_view.php");
     include("search_view.php");?>
-	  <div class="container">
-	  <hr>
+	  <!-- <div class="container"> -->
 	  <form class="form-horizontal" id="choose_users" action="../compare/compare_view.php" target="_blank" method="post">
        <?php echo "<input type='hidden' id='skill-input' name='skill' value='$skill'>" #send search param to compare page to echo ?>
 	     <div class="container" style='display:flex;'>
-		       <h1>Search Results</h1>
 		       <?php if (count($user_with_skill) > 0) { ?>
-		       <input id="compare" type="submit" name="compare" value="Compare" class="btn btn-primary" style="margin-left: auto;">
+                    <h2>Search Results</h2>
+		       <input id="compare" type="submit" name="compare" value="Compare" class="btn btn-light" style="margin-left: auto;">
 	     </div>
 
        <div class="container" style="height: 50%; overflow-y: auto;">
@@ -31,44 +30,20 @@ if(isset($_POST['user_skill'])) {
 		           <?php foreach($user_with_skill as $row) : ?>
 		           <tr>
 			         <?php $photo = $row['photo'];
-			         echo "<td style='border-top: 1px solid #ddd;
-				            border-left: 1px solid #ddd;
-				            border-bottom: 1px solid #ddd;
-				            border-radius: 10px 0 0 10px;
-				            color: #ffffff;
-				            font-size: 20px;'
-				            bgcolor='#006a66'
-				            align='center'>
-				            <img src='$photo' alt='No Photo' height='42' style='margin: 5px 0;'>
+			         echo "<td id='sr_col1'>
+				              <img src='$photo' alt='No Photo'>
 			              </td>"; ?>
 
-                    <td style='border-top: 1px solid #ddd;
-				            border-bottom: 1px solid #ddd;
-				            color: #ffffff;
-				            font-size: 20px;'
-				            bgcolor='#006a66'
-				            align='center'>
+                    <td id="sr_col2">
 				            <?php echo $row['name']; ?>
 			              </td>
 
-                    <td style='border-top: 1px solid #ddd;
-				            border-bottom: 1px solid #ddd;
-				            color: #ffffff;
-				            font-size: 20px;'
-				            bgcolor='#006a66'
-				            align='center'>
+                    <td id="sr_col3">
 				            <?php echo $skill; ?>
 			              </td>
 
                     <?php $checkval = intval($row['userID']);
-			              echo "<td style='border-top: 1px solid #ddd;
-					          border-right: 1px solid #ddd;
-					          border-bottom: 1px solid #ddd;
-					          border-radius: 0 10px 10px 0;
-					          color: #ffffff;
-					          font-size: 20px;'
-					          bgcolor='#006a66'
-					          align='center'>
+			              echo "<td id='sr_col4'>
 				            <input type='checkbox' name='selected_compare[]' id='selected_compare' value='$checkval' />
 					          Add
 			              </td>"; ?>
@@ -78,11 +53,11 @@ if(isset($_POST['user_skill'])) {
 		       </table>
 	     </div>
 		</form>
-
+<!-- </div> -->
 	<?php } else {
-		        echo "</div><div class='container' style='display:flex;'><h2><br>No Results Found</h2></div>";
+		        echo "<div style='display:flex;'><h2>No Results Found</h2></div>";
 	      } ?>
-	  </div>
+	  <!-- </div> -->
 <?php } else {
             header("Location: search_view.php");
             exit();

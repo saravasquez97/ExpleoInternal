@@ -88,7 +88,7 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
         <hr>
         <div style="height:11.5rem"><p class="card-text"><?php echo showHard($user, $show_hard, $searched_hskill, 5);?></p></div>
         <hr>
-        <button type="button" class="btn btn-success openBtn" <?php echo "value='$user'";?>>View Full Profile</button>
+        <button type="button" class="btn btn-light openBtn" <?php echo "value='$user'";?>>View Full Profile</button>
     </div>
 </div>
 

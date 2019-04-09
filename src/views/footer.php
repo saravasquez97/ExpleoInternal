@@ -14,7 +14,7 @@
         width: 100%;
         height: 60px; /* Set the fixed height of the footer here */
         line-height: 60px; /* Vertically center the text there */
-        background-color: #f5f5f5;
+        background-color: #111111;
       }
 
       /* Custom page CSS
@@ -28,9 +28,9 @@
     </style>
 
 
-    <footer class="footer bg-dark">
+    <footer class="footer">
       <div class="container">
-        <span class="text-muted">Copyright &copy; <?php echo date("Y"); ?> SQS. All rights reserved.</span>
+        <span class="text-muted">Copyright &copy; <?php echo date("Y"); ?> Expleo. All rights reserved.</span>
         <span class="text-muted float-right"><?php echo 'VERSION'." ".'ENV'; ?></span>
       </div>
     </footer>
