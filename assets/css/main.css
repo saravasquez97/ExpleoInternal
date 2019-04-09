@@ -371,3 +371,8 @@ select:disabled {
 .horizontal-scroll > .card {
     display: inline-block;
   }
+
+.profile-modal {
+	height: auto;
+	margin-bottom: 2rem;
+}

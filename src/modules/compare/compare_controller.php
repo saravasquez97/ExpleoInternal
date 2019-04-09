@@ -24,20 +24,20 @@ function showBasic($user, $show_basic)
 	if ($show_basic)
 	{
 		$result = getBasic($user);
-		 echo "<hr>";
      echo "<strong>Email:</strong> " .$result['email'] ."<br>";
      echo "<strong>Gender:</strong> " .$result['gender'] ."<br>" ;
      echo "<strong>Location:</strong> " .$result['city'] .", " .$result['state'];
 	}
 }
 
-function showSoft($user, $show_soft, $searched_sskill)
+function showSoft($user, $show_soft, $searched_sskill, $max_skills_list = 100)
 {
-	$MAX_SKILLS_LIST = 5;
+	$MAX_SKILLS_LIST = $max_skills_list;
+
 	if ($show_soft)
 	{
-		echo "<hr>";
-		echo "<strong>Top Software Skills:</strong><br>";
+		if ($max_skills_list < 100) { echo "<strong>Top </strong>"; }
+		echo "<strong>Software Skills:</strong><br>";
 
 		if (!is_null($searched_sskill)) {
 			echo "$searched_sskill <br>";
@@ -58,13 +58,14 @@ function showSoft($user, $show_soft, $searched_sskill)
 	}
 }
 
-function showHard($user, $show_hard, $searched_hskill)
+function showHard($user, $show_hard, $searched_hskill, $max_skills_list = 100)
 {
-	$MAX_SKILLS_LIST = 5;
+	$MAX_SKILLS_LIST = $max_skills_list;
+
 	if ($show_hard)
 	{
-		echo "<hr>";
-		echo "<strong>Top Hardware Skills:</strong><br>";
+		if ($max_skills_list < 100) { echo "<strong>Top </strong>"; }
+		echo "<strong>Hardware Skills:</strong><br>";
 
 		if (!is_null($searched_hskill)) {
 			echo "$searched_hskill <br>";
@@ -91,4 +92,9 @@ function isSoftSkill($searched_skill) {
 	$result = in_software_skills($searched_skill);
 	return $result;
 }
+
+function showUserInfo($user) {
+
+}
+
 ?>

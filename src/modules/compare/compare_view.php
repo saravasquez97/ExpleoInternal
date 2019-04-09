@@ -40,7 +40,7 @@ function Create_Cards($uid){
   $searched_skill = $_POST['skill'];
   $searched_sskill = NULL;
   $searched_hskill = NULL;
-  
+
   if (isSoftSkill($searched_skill)){ $searched_sskill = $searched_skill; }
   else { $searched_hskill = $searched_skill; }
 
@@ -81,13 +81,47 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
     <div class="card-body">
         <div style="height:auto"><h5 class="card-title"> <?php echo showName($user); ?></h5></div>
         <div style="height:auto"><?php echo showPhoto($user, $show_photo); ?></div>
+        <br>
         <div style="height:auto"><p class="card-text"><?php echo showBasic($user, $show_basic);?></p></div>
-        <div style="height:11.5rem"><p class="card-text"><?php echo showSoft($user, $show_soft, $searched_sskill);?></p></div>
-        <div style="height:11.5rem"><p class="card-text"><?php echo showHard($user, $show_hard, $searched_hskill);?></p></div>
-        <!---<a href="#" class="btn btn-primary">Go somewhere</a>-->
+        <hr>
+        <div style="height:11.5rem"><p class="card-text"><?php echo showSoft($user, $show_soft, $searched_sskill, 5);?></p></div>
+        <hr>
+        <div style="height:11.5rem"><p class="card-text"><?php echo showHard($user, $show_hard, $searched_hskill, 5);?></p></div>
+        <hr>
+        <button type="button" class="btn btn-success openBtn" <?php echo "value='$user'";?>>View Full Profile</button>
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="profileModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('.openBtn').on('click',function(){
+    var thisUser = $(this).val();
+    $('.modal-body').load('user-profile.php?id='+thisUser,function(){
+        $('#profileModal').modal({show:true});
+    });
+});
+</script>
 
 <?php
 }
