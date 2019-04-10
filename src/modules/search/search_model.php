@@ -16,7 +16,12 @@ function queryUserBySkill($skill) {
 	 		  FROM user AS u WHERE u.UID IN
               (SELECT uss.user_id FROM
                 user_software_skills AS uss JOIN software_skills AS ss
-                ON (uss.skill_id = ss.UID AND ss.skill = :skill));";
+                ON (uss.skill_id = ss.UID AND ss.skill = :skill)
+               UNION
+               SELECT uhs.user_id FROM
+                user_hardware_skills AS uhs JOIN hardware_skills AS hs
+                ON (uhs.skill_id = hs.UID AND hs.skill = :skill)
+              );";
 
     $stmt = $base->prepare($sql);
     $stmt->bindParam(':skill',$skill,PDO::PARAM_STR);
