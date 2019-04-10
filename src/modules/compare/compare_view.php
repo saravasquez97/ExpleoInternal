@@ -11,34 +11,32 @@
 <div class="container">
 <h2 id="CompareHead">Employee Comparison</h2>
 
-<?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ){
-echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";}
-else{
+<?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ) {
+          echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";
+       }
+       else {
 ?>
-<hr>
-</div>
+        <hr>
+        </div>
 
 <?php
 
-if(isset($_POST['compare']))
-{
-  	if (isset($_POST['selected_compare']))
-  	{
-		$user_ids = $_POST['selected_compare'];
-		Create_Cards($user_ids);
-  	}
-  	else
-  	{echo "<div class='container'><h3> Error: No users selected on Employee Search page. </h3></div>";}
-}
+            if(isset($_POST['compare']))
+            {
+              	if (isset($_POST['selected_compare']))
+              	{
+            		$user_ids = $_POST['selected_compare'];
+            		Create_Cards($user_ids);
+              	}
+              	else
+              	{echo "<div class='container'><h3> Error: No users selected on Employee Search page. </h3></div>";}
+            }
+            else {
+              echo "<div class='container'><h3> Error: No users selected on Employee Search Page </h3></div>";
+            }
+        }
 
-
-else {
-  echo "<div class='container'><h3> Error: No users selected on Employee Search Page </h3></div>";
-}
-}
-}
-
-function Create_Cards($uid){
+function Create_Cards($uid) {
   //figure out if skill is hard or soft skill_id
   $searched_skill = $_POST['skill'];
   $searched_sskill = NULL;
@@ -47,31 +45,25 @@ function Create_Cards($uid){
   if (isSoftSkill($searched_skill)){ $searched_sskill = $searched_skill; }
   else { $searched_hskill = $searched_skill; }
 
-        //get user ids
-
-function Create_Cards($uid){
-        //get user ids
-
-
-        //put cards in overall container and start list for cards
-        ?> <div class="container horizontal-scroll" id = "allcards">
-              <div class="row" id = "alldemcards">
-                  <u1 class="list-inline"> <?php
-                       //make card for every user id
-                       for( $i = 0; $i < count($uid); $i++)
-                       {				
-					                $card_id = "user_card".$uid[$i]."child";
-					                $card_location = "user_card".$uid[$i]."parent";
-					                ?>
-						              <li class = "list-inline-item" id = '<?php echo $card_location; ?>'>
-					                  <div class="card" style="width: 22rem;" id = '<?php echo $card_id; ?>'>
-                            	<?php individualCard($uid[$i], $searched_sskill, $searched_hskill); ?>
-						                </div>
-					                </li>
-                          <?php
-                       }
-          ?> </div>
-            </div> <?php
+      //put cards in overall container and start list for cards
+      ?> <div class="container horizontal-scroll" id = "allcards">
+            <div class="row" id = "alldemcards">
+                <u1 class="list-inline"> <?php
+                     //make card for every user id
+                     for( $i = 0; $i < count($uid); $i++)
+                     {
+				                $card_id = "user_card".$uid[$i]."child";
+				                $card_location = "user_card".$uid[$i]."parent";
+				                ?>
+					              <li class = "list-inline-item" id = '<?php echo $card_location; ?>'>
+				                  <div class="card" style="width: 22rem;" id = '<?php echo $card_id; ?>'>
+                          	<?php individualCard($uid[$i], $searched_sskill, $searched_hskill); ?>
+					                </div>
+				                </li>
+                        <?php
+                     }
+        ?>  </div>
+          </div> <?php
 }
 
 function individualCard($user, $searched_sskill, $searched_hskill) {
@@ -89,7 +81,7 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
 			    <div style="height:auto"><h5 class="card-title">
             <?php echo showName($user); ?>
 	          <button type="submit"  class="close" onclick = closeuser('<?php echo $card_pass; ?>') >&times;</span></button>
-          </h5></div>	
+          </h5></div>
           <br>
           <div style="height:auto"><p class="card-text"><?php echo showBasic($user, $show_basic);?></p></div>
           <hr>
@@ -128,7 +120,7 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
                 $('#profileModal').modal({show:true});
             });
         });
-        
+
         function closeuser(user) {
           var parent = document.getElementById(user + "parent");
           var child = document.getElementById(user+ "child");
