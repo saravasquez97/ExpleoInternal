@@ -51,16 +51,29 @@ function createNewUser(){
         'last_name' => $_POST['last_name'],
         'email' => $_POST['email'],
         'password' => $_POST['password'],
-	'sales' => $_POST['sales_check']
+        'sales' => $_POST['sales_check']
     );
     $returned = newUser($array);
     if(is_numeric($returned)){
         $_SESSION['UID'] = $returned;
-        try {
-            $verification = new EmailServices($array['email']);
-            $verification->sendAccountVerification();
-        }catch(Exception $e){
-            error("Error: " . $e);
+        if(isset($_POST['sales_check'])){
+            $admins = adminEmails();
+            foreach($admins as $admin){
+                try {
+                    $verification = new EmailServices($admin['email']);
+                    $verification->sendSalesVerification();
+                }catch(Exception $e){
+                    error("Error: " . $e);
+                }
+            }
+        }
+        else{
+            try {
+                $verification = new EmailServices($array['email']);
+                $verification->sendAccountVerification();
+            }catch(Exception $e){
+                error("Error: " . $e);
+            }
         }
     }else{
         error("Error: Email already exists. Please sign in." );

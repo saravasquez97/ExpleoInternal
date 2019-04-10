@@ -90,6 +90,34 @@ class EmailServices {
         return (string)$msg;
     }
 
+	/**
+     * Sends email with generated message to the email address connected to this object
+     */
+    public function sendSalesVerification()
+    {
+        $subject = "Sales Accounts Created";
+        $message = $this->createSalesMessage();
+
+        $this->sendEmail($this->to, $subject, $message, $this->headers);
+    }
+
+    /**
+     * Creates an HTML message template for email notification of sales account creation
+     */
+
+	private function createSalesMessage()
+    {
+        $msg = "<!DOCTYPE html><html><body>";
+        $msg .= "<h2>New Sales Accounts Need Verification</h2>";
+        $msg .= "<p>New sales personnel have created accounts that need verification before gaining access to the training site.</p>";
+        $msg .= "<p>Navigate to the Verify User tab in the SQS training site to verify new accounts.</p>";
+        $msg .= "<p>Thanks,</p>";
+        $msg .= "<p>The SQS Training Team</p>";
+        $msg .= "</body></html>";
+
+        return (string)$msg;
+    }    
+
     /**
      * Creates a unique url using an email and specific hash associated with that email.
      * @param $email

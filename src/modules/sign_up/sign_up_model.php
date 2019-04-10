@@ -92,3 +92,11 @@ function addInfo($data){
         return $e;
     }
 }
+
+function adminEmails(){
+    $base = Connector::getDatabase();
+    $sql = "SELECT * FROM user WHERE role = 'ADMIN' /*OR role = 'SUPERADMIN'*/;";
+    $stmt = $base->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
