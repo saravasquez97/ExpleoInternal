@@ -245,7 +245,7 @@ include("../../views/header.php");
 				</div>
 				<div class="software-skills-personal">
 					<label>Your Skills</label>
-				    <select multiple="multiple" name='softwareSkills[]'' id='lstBoxSoftware2' class="form-control" disabled>
+				    <select multiple="multiple" name='softwareSkills[]' id='lstBoxSoftware2' class="form-control" disabled>
                         <?php
                             $softbanks = $_SESSION['softskills'];
                             foreach($softbanks as $softbank){
@@ -302,6 +302,7 @@ include("../../views/header.php");
                     <form class="form-horizontal" id="editProfile" action="profile_controller.php" method="post" enctype="multipart/form-data">
 				        <input id="EditProfile" type="submit" name="edit" value="Edit" class="btn btn-primary" style="float:right;margin-right:5px;"<?php if($_SESSION['edit']){echo "disabled";}?>>
                     </form>
+					<input type="button" class="btn btn-primary" style:"background-color: #6846c7; float:right; margin-right:5px;" <?php if($_SESSION['edit']){echo "disabled";}?> onclick="location.href='../advanced_profile/advanced_profile_controller.php';" value="Advanced Information">
 <!--				    <input type="text" name="orgin" value="0" style="display:none;">-->
 <!--				    <input type="text" id="UserLevel"name="level" value="3" style="display:none;">-->
                 </div>
