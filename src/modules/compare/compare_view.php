@@ -82,6 +82,7 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
             <?php echo showName($user); ?>
 	          <button type="submit"  class="close" onclick = closeuser('<?php echo $card_pass; ?>') >&times;</span></button>
           </h5></div>
+          <div style="height:auto"><?php echo showPhoto($user, $show_photo); ?></div>
           <br>
           <div style="height:auto"><p class="card-text"><?php echo showBasic($user, $show_basic);?></p></div>
           <hr>
