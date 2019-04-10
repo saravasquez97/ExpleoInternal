@@ -25,9 +25,18 @@ function showBasic($user, $show_basic)
 	if ($show_basic)
 	{
 		$result = getBasic($user);
-     echo "<strong>Email:</strong> " .$result['email'] ."<br>";
-     echo "<strong>Gender:</strong> " .$result['gender'] ."<br>" ;
-     echo "<strong>Location:</strong> " .$result['city'] .", " .$result['state'];
+		echo "<div class='row'>";
+			echo "<div class='col-sm-4'>";
+				echo "<strong>Email: </strong><br>";
+				echo "<strong>Gender: </strong><br>";
+				echo "<strong>Location: </strong>";
+			echo "</div>";
+			echo "<div class='col-sm-8'>";
+				echo $result['email']."<br>";
+				echo $result['gender']."<br>";
+				echo $result['city'] .", " .$result['state'];
+			echo "</div>";
+		echo "</div>";
 	}
 }
 
