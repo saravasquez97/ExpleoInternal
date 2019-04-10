@@ -7,6 +7,7 @@ function showName($user)
 {
 	$result = getName($user);
 	echo $result['first_name'] . " " .$result['last_name'];
+
 }
 
 function showPhoto($user, $show_photo)

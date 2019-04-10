@@ -10,6 +10,7 @@ function getName($uid) {
 		$stmt = $base->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->fetch();
+
 		return $result;
 	} catch (Exception $e) {throw ($e);}
 }
@@ -37,6 +38,7 @@ function getBasic($uid){
 	{
 		throw ($e);
 	}
+	
 }
 
 function getSoft($uid){
@@ -49,6 +51,7 @@ function getSoft($uid){
 							ORDER BY skill ASC;"; #We can change the order later, maybe sort by skill ranking
   		$stmt = $base->prepare($sql);
   		$stmt->execute();
+
 			$result = $stmt->fetchAll();
 			return $result;
   	} catch (Exception $e)

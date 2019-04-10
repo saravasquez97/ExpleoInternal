@@ -8,7 +8,7 @@ if(!isset($_SESSION))
 
 $_SESSION['errorMessage'] = null;
 
-if(isset($_POST['user_skill'])) {
+if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
     $skill = $_POST['user_skill'];
     $user_with_skill = queryUserBySkill($skill);
     $_SESSION['search_results'] = $user_with_skill;
@@ -16,6 +16,7 @@ if(isset($_POST['user_skill'])) {
     // print_r($user_with_skill);
     #header("Location: search_view.php");
     include("search_view.php");?>
+
 	  <!-- <div class="container"> -->
 	  <form class="form-horizontal" id="choose_users" action="../compare/compare_view.php" target="_blank" method="post">
        <?php echo "<input type='hidden' id='skill-input' name='skill' value='$skill'>" #send search param to compare page to echo ?>
