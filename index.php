@@ -42,9 +42,9 @@ require_once ("src/config/config.php");
     <body>
         <div id="heading2">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <nav class="navbar navbar-expand-md fixed-top">
 
-                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
+                <a class="navbar-brand" href="#"><img style="width: 100px;" src="assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

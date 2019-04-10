@@ -42,9 +42,9 @@
 <body>
 <div id="heading2">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top">
 
-        <a class="navbar-brand" href="#"><img src="../../../assets/img/logo.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
+        <a class="navbar-brand" href="#"><img style="width: 100px;" src="../../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,13 +78,14 @@
         $_SESSION['errorMessage'] = null;
         ?>
   	    <form method="post" action="sign_in_controller.php">
-            <br><h5 id="LogInWelcomeHead">Welcome to the SQS Training Site, please log in.</h5><br>
-            <img id="LogInImage" src="../../../assets/images/logo.png" alt="" style="width:50%;display:block;margin-left:auto;margin-right:auto;"><br>
-	        <label for="email_Signin">Email:</label><br>
-	     	<input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" id="email" autofocus autocomplete="email"/><br>
-	    	<label for="password">Password:</label><br>
-	        <input class="form-control" type="password" name="password" placeholder="Password" maxlength="30" id="password"/>
-            <input class="btn btn-success" type="submit" name="submit" value="Sign in" id="submit"/>
+            <img id="LogInImage" style="width: 450px;" src="../../../assets/images/expleo-logo-purple.png" alt="" style="width:50%;display:block;margin-left:auto;margin-right:auto;"><br>
+	        <!-- <label for="email_Signin">Email:</label><br> -->
+            <br>
+	     	    <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" id="email" autofocus autocomplete="email"/><br>
+	    	<!-- <label for="password">Password:</label><br> -->
+	          <input class="form-control" type="password" name="password" placeholder="Password" maxlength="30" id="password"/>
+            <br>
+            <input class="btn btn-light" type="submit" name="submit" value="Sign in" id="submit"/>
 	    </form>
 	</div>
 </html>

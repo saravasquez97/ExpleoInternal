@@ -97,6 +97,10 @@ body {
 	text-align: center;
 }
 
+img.figure-img.img-fluid.rounded {
+	margin: 0;
+}
+
 .banner {
 	height: 200px;
 	background-color: #31708f;
