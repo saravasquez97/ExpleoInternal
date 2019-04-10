@@ -56,7 +56,7 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top">
 
       <a class="navbar-brand" href="#"><img src="../../../assets/img/logo.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,11 +101,11 @@
         </ul>
          <form class="form-inline my-2 my-lg-0">
            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+           <button class="btn btn-light my-2 my-sm-0" type="submit" style="margin-right: 8px;">Search</button>
          </form>
           <div class="">  </div>
           <form class = "for-inline my-2 my-lg-0" action="../sign_out/sign_out_controller.php">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
+              <button class="btn btn-light my-2 my-sm-0" type="submit">Sign Out</button>
           </form>
       </div>
     </nav>

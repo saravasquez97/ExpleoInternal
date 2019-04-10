@@ -1,17 +1,32 @@
 @import url(bootstrap.css);
 
 /*MOBILE CSS*/
-body {background-color: #f1f1f1;}
-
-.navbar-dark .navbar-nav .nav-link {
-	color: white;
+body {
+	background-color: #f1f1f1;
+	font-family: "Montserrat", sans-serif;
 }
+
+.container {
+	margin-top: 1rem;
+}
+
+.nav-link {
+	color: white;
+	font-family: "Montserrat", sans-serif;
+}
+
+.nav-link:hover {
+	color: #dddddd;
+}
+
 .photo-edit {
 	display: none;
 }
 .navbar {
+	background-color: #111111;
   margin-bottom: 20px;
 }
+
 #navbarSupportedContent ul.dropdown-menu {
 	background: #31373e;
 	color: white;
@@ -371,3 +386,124 @@ select:disabled {
 .horizontal-scroll > .card {
     display: inline-block;
   }
+
+.card-body {
+	background-color: #efebf9;
+}
+
+.profile-modal {
+	height: auto;
+	margin-bottom: 1em;
+}
+
+.profile-modal p {
+	margin-bottom: 5px;
+}
+
+.modal-body {
+    position: relative;
+    overflow-y: auto;
+}
+
+/* =================================================
+                 SEARCH PAGE TABLE
+================================================== */
+
+#sr_col1 {
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 10px 0 0 10px;
+	color: #ffffff;
+	font-size: 20px;
+	background-color: #392376;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#sr_col1 > img {
+	display: block;
+	height: 42px;
+	margin: 5px auto;
+}
+
+#sr_col2 {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #ffffff;
+	font-size: 20px;
+	background-color: #392376;
+	text-align: center;
+}
+
+#sr_col3 {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #ffffff;
+	font-size: 20px;
+	background-color: #392376;
+	text-align: center;
+}
+
+#sr_col4 {
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 0 10px 10px 0;
+	color: #ffffff;
+	font-size: 20px;
+	background-color: #392376;
+	text-align: center;
+}
+
+/* =================================================
+          OVERRIDE BOOTSTRAP BUTTON STYLE
+================================================== */
+.form-control {
+	font-family: "Montserrat", sans-serif;
+}
+
+button.btn.btn-light {
+	background-color: #6846c7;
+	border-color: #6846c7;
+	font-family: "Montserrat", sans-serif;
+	color: white;
+}
+
+button.btn.btn-light:hover {
+	background-color: #7f62d0;
+	border-color: #7f62d0;
+}
+
+!important button.btn.btn-light:active {
+	background-color: #7f62d0;
+	border-color: #7f62d0;
+}
+
+!important button.btn.btn-light:focus {
+	border-color: #7f62d0;
+	outline-color: #7f62d0;
+}
+
+input.btn.btn-light {
+	border-color: #6846c7;
+	background-color: #6846c7;
+	font-family: "Montserrat", sans-serif;
+	color: white;
+}
+
+input.btn.btn-light:hover {
+	background-color: #7f62d0;
+	border-color: #7f62d0;
+	color: white;
+}
+
+!important input.btn.btn-light:active {
+	background-color: #7f62d0;
+	border-color: #7f62d0;
+}
+
+!important input.btn.btn-light:focus {
+	border-color: #7f62d0;
+	outline-color: #7f62d0;
+}
