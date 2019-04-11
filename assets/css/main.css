@@ -13,6 +13,8 @@ body {
 .nav-link {
 	color: white;
 	font-family: "Montserrat", sans-serif;
+	font-size: .8em;
+	font-weight: bold;
 }
 
 .nav-link:hover {
@@ -25,6 +27,11 @@ body {
 .navbar {
 	background-color: #111111;
   margin-bottom: 20px;
+}
+
+.navbar-brand {
+	padding: 0 !important;
+	margin-right: 0 !important;
 }
 
 #navbarSupportedContent ul.dropdown-menu {
@@ -398,6 +405,7 @@ select:disabled {
 
 .card-body {
 	background-color: #efebf9;
+	/* background-color: #dfd8f3; */
 }
 
 .profile-modal {
@@ -425,7 +433,7 @@ select:disabled {
 	border-radius: 10px 0 0 10px;
 	color: #ffffff;
 	font-size: 20px;
-	background-color: #392376;
+	background-color: #6846c7;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -441,7 +449,7 @@ select:disabled {
 	border-bottom: 1px solid #ddd;
 	color: #ffffff;
 	font-size: 20px;
-	background-color: #392376;
+	background-color: #6846c7;
 	text-align: center;
 }
 
@@ -450,7 +458,7 @@ select:disabled {
 	border-bottom: 1px solid #ddd;
 	color: #ffffff;
 	font-size: 20px;
-	background-color: #392376;
+	background-color: #6846c7;
 	text-align: center;
 }
 
@@ -461,7 +469,7 @@ select:disabled {
 	border-radius: 0 10px 10px 0;
 	color: #ffffff;
 	font-size: 20px;
-	background-color: #392376;
+	background-color: #6846c7;
 	text-align: center;
 }
 
@@ -477,11 +485,23 @@ button.btn.btn-light {
 	border-color: #6846c7;
 	font-family: "Montserrat", sans-serif;
 	color: white;
+	font-size: .8em;
+	font-weight: bold;
 }
 
 button.btn.btn-light:hover {
 	background-color: #7f62d0;
 	border-color: #7f62d0;
+}
+
+button.btn {
+	font-size: .8em;
+	font-weight: bold;
+}
+
+input.btn {
+	font-size: .8em;
+	font-weight: bold;
 }
 
 !important button.btn.btn-light:active {
@@ -499,6 +519,8 @@ input.btn.btn-light {
 	background-color: #6846c7;
 	font-family: "Montserrat", sans-serif;
 	color: white;
+	font-size: .8em;
+	font-weight: bold;
 }
 
 input.btn.btn-light:hover {

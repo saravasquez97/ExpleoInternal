@@ -33,6 +33,10 @@
           padding-top: 5rem;
           font-family: "Montserrat", sans-serif;
       }
+
+      h1 {
+    		font-weight: bold;
+    	}
     </style>
 
       <script type="text/javascript">
@@ -59,7 +63,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md fixed-top">
 
-      <a class="navbar-brand" href="../landing/landing_controller.php"><img style="width: 100px;" src="../../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="logo"></a>
+      <a class="navbar-brand" href="../landing/landing_controller.php"><img style="width: 9.0625rem;" src="../../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -101,7 +105,7 @@
           </li>
         </ul>
          <form class="form-inline my-2 my-lg-0">
-           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="font-size: .8em; font-weight: bold;">
            <button class="btn btn-light my-2 my-sm-0" type="submit" style="margin-right: 8px;">Search</button>
          </form>
           <div class="">  </div>
