@@ -2,21 +2,25 @@
 <?php
 require_once ("../../lib/Connector.php");
 
+//Given a user ID, this function returns the first and last name of associated user
 function getName($uid) {
 
 	try {
+		//Query the database
 		$base = Connector::getDatabase();
 		$sql = "SELECT first_name, last_name FROM user WHERE UID = '$uid';";
 		$stmt = $base->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->fetch();
-
+		//Retrun an array with first_name and last_name
 		return $result;
 	} catch (Exception $e) {throw ($e);}
 }
 
+//Given a user ID, this function returns the photo of associated user
 function getPhoto($uid) {
 	try {
+		//Query the database
 		$base = Connector::getDatabase();
 		$sql = "SELECT IFNULL(photo, '../../../assets/images/uploads/NoUpload.png') AS photo FROM user WHERE UID = '$uid';";
 		$stmt = $base->prepare($sql);
@@ -26,6 +30,7 @@ function getPhoto($uid) {
 	} catch (Exception $e) {throw ($e);}
 }
 
+//Given a user ID, this function returns all the basic information for the user
 function getBasic($uid){
 	try {
     $base = Connector::getDatabase();
@@ -41,6 +46,7 @@ function getBasic($uid){
 	
 }
 
+//Given a user ID, this function returns all the software skills for the user
 function getSoft($uid){
   	try {
   		$base = Connector::getDatabase();
@@ -51,15 +57,15 @@ function getSoft($uid){
 							ORDER BY skill ASC;"; #We can change the order later, maybe sort by skill ranking
   		$stmt = $base->prepare($sql);
   		$stmt->execute();
-
-			$result = $stmt->fetchAll();
-			return $result;
+		$result = $stmt->fetchAll();
+		//return software skills in an array in alaphabetical order
+		return $result;
   	} catch (Exception $e)
 		{
 			throw ($e);
 		}
 }
-
+//Given a user ID, this function returns all the hardware skills for the user
 function getHard($uid){
   try {
 			$base = Connector::getDatabase();
@@ -71,12 +77,14 @@ function getHard($uid){
       $stmt = $base->prepare($sql);
       $stmt->execute();
       $result = $stmt->fetchAll();
+      //return hardware skills in an array in alaphabetical
 	return $result;
     } catch (Exception $e) {
 				throw ($e);
 		}
 }
 
+//Given a searched skill, this function returns the User ID of all users with that searched skill
 function in_software_skills($searched_skill) {
 	try {
 			$base = Connector::getDatabase();
@@ -91,6 +99,7 @@ function in_software_skills($searched_skill) {
 		}
 }
 
+//Given a User ID, this function returns information about that user
 function getUserInfo($uid) {
 	try {
     $base = Connector::getDatabase();

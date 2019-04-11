@@ -11,24 +11,29 @@
 <div class="container">
 <h1 id="CompareHead">Employee Comparison</h1>
 
-<?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ) {
+<?php  
+    //If an unathorized user tries to access this page, all that is displayed is this message
+    if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ) {
           echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";
        }
-       else {
+    
+    else {
 ?>
         <hr>
         </div>
 
 <?php
 
-            if(isset($_POST['compare']))
+	if(isset($_POST['compare']))
             {
               	if (isset($_POST['selected_compare']))
-              	{
+		{	
+			//if users to compare have been sent from the previous page, create the cards to display user information
             		$user_ids = $_POST['selected_compare'];
             		Create_Cards($user_ids);
               	}
-              	else
+		else
+			//if no users have been specified to compare, an error message is displayed
               	{echo "<div class='container'><h3> Error: No users selected on Employee Search page. </h3></div>";}
             }
             else {
@@ -36,12 +41,14 @@
             }
         }
 
+//this function takes an input of an array of user IDs and creates the user cards
 function Create_Cards($uid) {
   //figure out if skill is hard or soft skill_id
   $searched_skill = $_POST['skill'];
   $searched_sskill = NULL;
   $searched_hskill = NULL;
 
+  //see if the searched for skill was a hardware or software skill
   if (isSoftSkill($searched_skill)){ $searched_sskill = $searched_skill; }
   else { $searched_hskill = $searched_skill; }
 
@@ -51,15 +58,17 @@ function Create_Cards($uid) {
                 <u1 class="list-inline"> <?php
                      //make card for every user id
                      for( $i = 0; $i < count($uid); $i++)
-                     {
-				                $card_id = "user_card".$uid[$i]."child";
-				                $card_location = "user_card".$uid[$i]."parent";
-				                ?>
-					              <li class = "list-inline-item" id = '<?php echo $card_location; ?>'>
-				                  <div class="card" style="width: 22rem;" id = '<?php echo $card_id; ?>'>
-                          	<?php individualCard($uid[$i], $searched_sskill, $searched_hskill); ?>
-					                </div>
-				                </li>
+		     {
+			//to allow for removing individual users from the view, create variable names for containers
+			$card_id = "user_card".$uid[$i]."child";
+			$card_location = "user_card".$uid[$i]."parent";	?>
+
+			<li class = "list-inline-item" id = '<?php echo $card_location; ?>'>
+				<div class="card" style="width: 22rem;" id = '<?php echo $card_id; ?>'>
+					<?php //create a card for each user
+					individualCard($uid[$i], $searched_sskill, $searched_hskill); ?>
+		                </div>
+			</li>
                         <?php
                      }
         ?>   </div>
@@ -73,8 +82,11 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
         $show_photo = true;
         $show_basic = true;
         $show_soft = true;
-	      $show_hard = true;
-	      $card_pass = "user_card".$user;
+	$show_hard = true;
+	//create the variable that specifies card to remove if the 'x' button on the user page is removed
+	$card_pass = "user_card".$user;
+
+	//display name, photo, software skills, and hardware skills on user card
 ?>
 
         <div class="card-body">
@@ -122,7 +134,7 @@ function individualCard($user, $searched_sskill, $searched_hskill) {
             });
         });
 
-        function closeuser(user) {
+	function closeuser(user) {
           var parent = document.getElementById(user + "parent");
           var child = document.getElementById(user+ "child");
           parent.removeChild(child);
