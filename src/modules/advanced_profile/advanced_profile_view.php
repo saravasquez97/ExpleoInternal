@@ -46,6 +46,7 @@ include("../../views/header.php");
 				<?php
 					$advsoftskills = $_SESSION['advsoftskills'];
 					foreach($advsoftskills as $advsoftskill){
+						//Loop through list of skills
 						$skill_id = $advsoftskill['UID'];
 						$skill_name = $advsoftskill['skill'];
 						$skill_exp = $advsoftskill['exp'];
@@ -55,15 +56,17 @@ include("../../views/header.php");
 						?>
 						<td>
 							<select name='soft_skill_level[]' id='soft_skill_level' disabled>
-								  <option value='N/A' <?php if($skill_exp == "N/A") echo "SELECTED";?>>N/A</option>
-								  <option value='Fundamental Awareness' <?php if($skill_exp == "Fundamental Awareness") echo "SELECTED";?>>Fundamental Awareness</option>
-								  <option value='Novice' <?php if($skill_exp == "Novice") echo "SELECTED";?>>Novice</option>
-								  <option value='Intermediate' <?php if($skill_exp == "Intermediate") echo "SELECTED";?>>Intermediate</option>
-								  <option value='Advanced' <?php if($skill_exp == "Advanced") echo "SELECTED";?>>Advanced</option>
-								  <option value='Expert' <?php if($skill_exp == "Expert") echo "SELECTED";?>>Expert</option>
+								<!-- Set default selection to database value -->
+								<option value='N/A' <?php if($skill_exp == "N/A") echo "SELECTED";?>>N/A</option>
+								<option value='Fundamental Awareness' <?php if($skill_exp == "Fundamental Awareness") echo "SELECTED";?>>Fundamental Awareness</option>
+								<option value='Novice' <?php if($skill_exp == "Novice") echo "SELECTED";?>>Novice</option>
+								<option value='Intermediate' <?php if($skill_exp == "Intermediate") echo "SELECTED";?>>Intermediate</option>
+							 	<option value='Advanced' <?php if($skill_exp == "Advanced") echo "SELECTED";?>>Advanced</option>
+								<option value='Expert' <?php if($skill_exp == "Expert") echo "SELECTED";?>>Expert</option>
 							</select>
 						</td>
 						<?php
+						//Set default value to database value
 						echo "<td><input type='number' name='soft_skill_years[]' id='soft_skill_years' min='0' value='$skill_years' disabled></td>";
 						echo "</tr>";
 					}
@@ -79,6 +82,7 @@ include("../../views/header.php");
 				<?php
 					$advhardskills = $_SESSION['advhardskills'];
 					foreach($advhardskills as $advhardskill){
+						//Loop through list of skills
 						$skill_id = $advhardskill['UID'];
 						$skill_name = $advhardskill['skill'];
 						$skill_exp = $advhardskill['exp'];
@@ -88,6 +92,7 @@ include("../../views/header.php");
 						?>
 						<td>
 							<select disabled name="hard_skill_level[]" id="hard_skill_level">
+								<!-- Set default selection to database value -->
 								  <option value='N/A'>N/A</option>
 								  <option value='Fundamental Awareness'>Fundamental Awareness</option>
 								  <option value='Novice'>Novice</option>
@@ -97,6 +102,7 @@ include("../../views/header.php");
 							</select>
 						</td>
 						<?php
+						//Set default value to database value
 						echo "<td><input type='number' name='hard_skill_years[]' id='hard_skill_years' min='0' value='$skill_years' disabled></td>";
 						echo "</tr>";
 					}
