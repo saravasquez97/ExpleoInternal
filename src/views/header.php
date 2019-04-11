@@ -21,7 +21,7 @@
       <link rel="stylesheet" type="text/css" href="../../../assets/css/main.css">
       <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.css">
 
-    <title>SQS Training Site - </title>
+    <title>Expleo Internal</title>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="../../../assets/js/jquery.min.js"><\/script>')</script>
@@ -31,6 +31,7 @@
     <style>
       body {
           padding-top: 5rem;
+          font-family: "Montserrat", sans-serif;
       }
     </style>
 
@@ -96,7 +97,7 @@
                 }
             ?>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.sqs.com/en/index.php" target="_blank">Corporate Site</a>
+            <a class="nav-link" href="https://expleogroup.com" target="_blank">Corporate Site</a>
           </li>
         </ul>
          <form class="form-inline my-2 my-lg-0">

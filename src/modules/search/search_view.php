@@ -2,6 +2,8 @@
     include('../../views/header.php');
 ?>
 
+<script type="text/javascript">document.title += " Employee Search"</script>
+
 <div class="container">
 
     <h1 id="SearchHead">Employee Search</h1>

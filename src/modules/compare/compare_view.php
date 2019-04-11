@@ -62,7 +62,7 @@ function Create_Cards($uid) {
 				                </li>
                         <?php
                      }
-        ?>  </div>
+        ?>   </div>
           </div> <?php
 }
 

@@ -27,12 +27,12 @@ function showBasic($user, $show_basic)
 	{
 		$result = getBasic($user);
 		echo "<div class='row'>";
-			echo "<div class='col-sm-4'>";
+			echo "<div class='col-sm-3'>";
 				echo "<strong>Email: </strong><br>";
 				echo "<strong>Gender: </strong><br>";
 				echo "<strong>Location: </strong>";
 			echo "</div>";
-			echo "<div class='col-sm-8'>";
+			echo "<div class='col-sm-9'>";
 				echo $result['email']."<br>";
 				echo $result['gender']."<br>";
 				echo $result['city'] .", " .$result['state'];
