@@ -110,7 +110,7 @@ class EmailServices {
         $msg = "<!DOCTYPE html><html><body>";
         $msg .= "<h2>New Sales Accounts Need Verification</h2>";
         $msg .= "<p>New sales personnel have created accounts that need verification before gaining access to the training site.</p>";
-        $msg .= "<p>Navigate to the Verify User tab in the SQS training site to verify new accounts.</p>";
+        $msg .= "<p>Navigate to the 'Verify Users' tab in the SQS training site to verify new accounts.</p>";
         $msg .= "<p>Thanks,</p>";
         $msg .= "<p>The SQS Training Team</p>";
         $msg .= "</body></html>";

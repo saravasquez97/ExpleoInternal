@@ -95,7 +95,7 @@ function addInfo($data){
 
 function adminEmails(){
     $base = Connector::getDatabase();
-    $sql = "SELECT * FROM user WHERE role = 'ADMIN' /*OR role = 'SUPERADMIN'*/;";
+    $sql = "SELECT * FROM user WHERE role = 'ADMIN' OR role = 'SUPERADMIN';";
     $stmt = $base->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
