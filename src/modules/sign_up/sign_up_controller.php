@@ -29,12 +29,12 @@ if(!isset($_POST['hidden'])){
     createNewUser();
     /* Check to see if the account created was for a sales user and send them
        to the correct page after creating the account*/
-    if(isset($_POST['sales_check'])){
+   /* if(isset($_POST['sales_check'])){*/
     	header("Location: ../../views/sales_verification_page.php");
-    }
+   /* }
     else{
     	header("Location: ../../views/email_verification_page.php");
-    }
+    }*/
     exit();
 }
 
@@ -58,7 +58,7 @@ function createNewUser(){
     $returned = newUser($array);
     if(is_numeric($returned)){
         $_SESSION['UID'] = $returned;
-        if(isset($_POST['sales_check'])){
+        /*if(isset($_POST['sales_check'])){*/
             $admins = adminEmails();
             /* email admins to notify the creation of new sales users*/
             foreach($admins as $admin){
@@ -69,7 +69,7 @@ function createNewUser(){
                     error("Error: " . $e);
                 }
             }
-        }
+       /* }
         else{
             try {
                 $verification = new EmailServices($array['email']);
@@ -77,7 +77,7 @@ function createNewUser(){
             }catch(Exception $e){
                 error("Error: " . $e);
             }
-        }
+        }*/
     }else{
         error("Error: Email already exists. Please sign in." );
     }

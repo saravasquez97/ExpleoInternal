@@ -95,7 +95,7 @@ class EmailServices {
      */
     public function sendSalesVerification()
     {
-        $subject = "Sales Accounts Created";
+        $subject = "New Account Created";
         $message = $this->createSalesMessage();
 
         $this->sendEmail($this->to, $subject, $message, $this->headers);
@@ -108,8 +108,8 @@ class EmailServices {
 	private function createSalesMessage()
     {
         $msg = "<!DOCTYPE html><html><body>";
-        $msg .= "<h2>New Sales Accounts Need Verification</h2>";
-        $msg .= "<p>New sales personnel have created accounts that need verification before gaining access to the training site.</p>";
+        $msg .= "<h2>New Unverified Account Needs Verification</h2>";
+        $msg .= "<p>New personnel have created accounts that need verification before gaining access to the training site.</p>";
         $msg .= "<p>Navigate to the 'Verify Users' tab in the SQS training site to verify new accounts.</p>";
         $msg .= "<p>Thanks,</p>";
         $msg .= "<p>The SQS Training Team</p>";
