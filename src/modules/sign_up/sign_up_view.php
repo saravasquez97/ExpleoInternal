@@ -104,7 +104,7 @@
 		    <div class="row">
 			<div class="col-md-8 offset-md-3">
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="sales_check" id="sales_check" name="sales_check">
+					<input class="form-check-input" type="checkbox" value="true" id="SignupSales" name="sales_check">
 					<label for="salesCheck">I am a Sales Representative</label><br>
 				</div>
 			</div>
