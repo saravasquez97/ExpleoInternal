@@ -49,9 +49,9 @@ require_once ("../../config/config.php");
     <body>
         <div id="heading2">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <nav class="navbar navbar-expand-md fixed-top">
 
-                <a class="navbar-brand" href="#"><img src="../../../assets/img/logo.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
+                <a class="navbar-brand" href="../../../index.php"><img style="width: 100px;" src="../../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -87,21 +87,24 @@ require_once ("../../config/config.php");
                     $_SESSION['success'] = null;
                 }
                 ?>
+
+                <div class="container">
                 <h1 id="WelcomeHead">Reset your Password</h1>
                 <p id="DirectionPara">Please enter the email associated with your account. We will send a temporary password to this account.<br>
                 Please check your inbox and junk mailbox for the email and use the enclosed password to sign in to your account. <br>
-                From there, you can go to the profile page, select change password, and then use the temporary password again to change your password.</p><br><br>
+                From there, you can go to the profile page, select change password, and then use the temporary password again to change your password.</p><br>
 
                 <div class="profile-inputs">
                     <form action="reset_password_controller.php" method="post">
-                        <input class="form-control" id="Email" type="email" placeholder="Email..." name="email" maxlength="30"><br>
-                        <input id="SubmitProfile" type="submit" name="Submit" value="Submit" class="btn btn-success">
+                        <input class="form-control" id="Email" type="email" placeholder="Email" name="email" maxlength="30"><br>
+                        <input id="SubmitProfile" type="submit" name="Submit" value="Submit" class="btn btn-light">
                     </form>
                 </div>
-                <br><br><br><br>
+                <br><br>
                 <button class="btn" id="LoginBut" onclick="location.href='../sign_in/sign_in_controller.php'">Sign In</button>
                 <button class="btn" id="RegisterBut" onclick="location.href='../sign_up/sign_up_controller.php'">Sign Up</button>
             </div>
+          </div>
         </div>
     </body>
 <!--    <div id="ResetPassword" class="modal" role="dialog">-->

@@ -11,6 +11,7 @@
      session_start();
  }
 
+
 ?>
 
 <html lang="en">
@@ -30,11 +31,15 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.css">
     <link href="../../../assets/css/main.css" rel="stylesheet">
 
-    <title>SQS Training Site</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <title>Expleo Internal</title>
 
     <style>
         body {
-            padding-top: 10rem;
+            padding-top: 8rem;
         }
     </style>
 
@@ -51,7 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.sqs.com/en/index.php" target="_blank">Corporate Site</a>
+                    <a class="nav-link" href="https://expleogroup.com/" target="_blank">Corporate Site</a>
                 </li>
             </ul>
         </div>
@@ -78,14 +83,23 @@
         $_SESSION['errorMessage'] = null;
         ?>
   	    <form method="post" action="sign_in_controller.php">
-            <img id="LogInImage" style="width: 450px;" src="../../../assets/images/expleo-logo-purple.png" alt="" style="width:50%;display:block;margin-left:auto;margin-right:auto;"><br>
+            <img id="LogInImage" style="width: 100%;" src="../../../assets/images/expleo-logo-purple.png" alt="" style="width:50%;display:block;margin-left:auto;margin-right:auto;"><br>
 	        <!-- <label for="email_Signin">Email:</label><br> -->
             <br>
-	     	    <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" id="email" autofocus autocomplete="email"/><br>
+	     	    <input class="form-control" type="email" name="email" placeholder="Email" maxlength="30" id="email" autofocus autocomplete="email"/>
 	    	<!-- <label for="password">Password:</label><br> -->
 	          <input class="form-control" type="password" name="password" placeholder="Password" maxlength="30" id="password"/>
             <br>
             <input class="btn btn-light" type="submit" name="submit" value="Sign in" id="submit"/>
-	    </form>
-	</div>
+            <br>
+        </form>
+            <div class="row">
+              <div class="col-sm-6">
+                <button class="btn" style="width: 100%;" id="RegisterBut" onclick="location.href='../sign_up/sign_up_controller.php'">Sign Up</button>
+              </div>
+              <div class="col-sm-6">
+                <button class="btn" style="width: 100%;" id="ResetBut" onclick="location.href='../reset_password/reset_password_controller.php'">Reset Password</button>
+              </div>
+            </div>
+	   </div>
 </html>

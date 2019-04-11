@@ -9,7 +9,7 @@
 
 
 <div class="container">
-<h2 id="CompareHead">Employee Comparison</h2>
+<h1 id="CompareHead">Employee Comparison</h1>
 
 <?php  if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ) {
           echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";

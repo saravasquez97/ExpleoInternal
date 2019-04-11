@@ -1,5 +1,6 @@
 <?php
-include("compare_model.php");
+require_once("compare_model.php");
+
 ?>
 <?php
 
@@ -40,59 +41,61 @@ function showBasic($user, $show_basic)
 	}
 }
 
-function showSoft($user, $show_soft, $searched_sskill, $max_skills_list = 100)
+function showSoft($user, $show_soft, $searched_sskill, $max_skills_print = 100)
 {
-	$MAX_SKILLS_LIST = $max_skills_list;
+	$MAX_SKILLS_PRINT = $max_skills_print;
+	$MAX_SKILLS_TOTAL = $max_skills_print;
 
 	if ($show_soft)
 	{
-		if ($max_skills_list < 100) { echo "<strong>Top </strong>"; }
+		if ($max_skills_print < 100) { echo "<strong>Top </strong>"; }
 		echo "<strong>Software Skills:</strong><br>";
 
 		if (!is_null($searched_sskill)) {
 			echo "$searched_sskill <br>";
-			$MAX_SKILLS_LIST = $MAX_SKILLS_LIST - 1;
+			$MAX_SKILLS_PRINT = $MAX_SKILLS_PRINT - 1;
 		}
 
 		$result = getSoft($user);
 		if ($result) {
-    		for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
+    		for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_PRINT; $i++) #REMOVED <=
         {
 					$skill = $result[$i][0];
 					if ($skill != $searched_sskill) {
           	echo $skill ."<br>";
 					}
         }
-        if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
+        if (sizeof($result) >= $MAX_SKILLS_TOTAL) { echo "...";}
     }
 	}
 }
 
-function showHard($user, $show_hard, $searched_hskill, $max_skills_list = 100)
+function showHard($user, $show_hard, $searched_hskill, $max_skills_print = 100)
 {
-	$MAX_SKILLS_LIST = $max_skills_list;
+	$MAX_SKILLS_PRINT = $max_skills_print;
+	$MAX_SKILLS_TOTAL = $max_skills_print;
 
 	if ($show_hard)
 	{
-		if ($max_skills_list < 100) { echo "<strong>Top </strong>"; }
+		if ($max_skills_print < 100) { echo "<strong>Top </strong>"; }
 		echo "<strong>Hardware Skills:</strong><br>";
 
 		if (!is_null($searched_hskill)) {
 			echo "$searched_hskill <br>";
-			$MAX_SKILLS_LIST = $MAX_SKILLS_LIST - 1;
+			$MAX_SKILLS_PRINT = $MAX_SKILLS_PRINT - 1;
 		}
 
 		$result = getHard($user);
 		if ($result)
 		{
-			for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_LIST; $i++) #REMOVED <=
+			for ($i = 0; $i < sizeof($result) && $i < $MAX_SKILLS_PRINT; $i++) #REMOVED <=
 			{
 				$skill = $result[$i][0];
 				if ($skill != $searched_hskill) {
 					echo $skill ."<br>";
 				}
 			}
-			if (sizeof($result) >= $MAX_SKILLS_LIST) { echo "...";}
+			if (sizeof($result) >= $MAX_SKILLS_TOTAL) { echo "...";}
     }
 
 	}

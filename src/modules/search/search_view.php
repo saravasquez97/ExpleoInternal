@@ -3,8 +3,8 @@
 ?>
 
 <div class="container">
-  <div class="container">
-    <h2 id="SearchHead">Employee Search</h2>
+
+    <h1 id="SearchHead">Employee Search</h1>
 
     <?php
       if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
@@ -21,7 +21,7 @@
       <form class= "form-inline my-2 my-lg-0" action="search_controller.php" method="post">
         <font size="4">Hardware or Software Skill: &nbsp;</font> <input type="text" class = "form-control mr-sm-2"  aria-label="Search" id="user_skill" name="user_skill" maxlength = "25" style>
 	      <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button> &nbsp;
-	      <button class="btn btn-light my-2 my-sm-0" type="submit" id="reset" name="reset">Reset Search</button>      
+	      <button class="btn btn-light my-2 my-sm-0" type="submit" id="reset" name="reset">Reset Search</button>
       </form>
       <hr>
     </div>
