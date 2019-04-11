@@ -26,7 +26,6 @@ getUsers();
 if(isset($_POST['verify'])){
 	updateVerified($_POST);
 	getUsers();
-
 }
 
 /*
@@ -43,9 +42,10 @@ header("Location: sales_verify_view.php");
 	Get the sales users to be displayed
 */
 function getUsers(){
-	$unverified = getSalesUsers();
+	$unverified = getUnverifiedUsers();
 	$_SESSION['users'] = $unverified;
 }
+
 
 /*
 	Contact the database to set the verified user flag to true

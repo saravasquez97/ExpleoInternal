@@ -17,10 +17,10 @@ if(!isset($_SESSION))
  * gets unverified sale users
  * @return data
  */
-function getSalesUsers()
+function getUnverifiedUsers()
 {
 	$base = Connector::getDatabase();
-	$sql = "SELECT * FROM user WHERE (role LIKE 'SALES' AND verified = 0);";
+	$sql = "SELECT * FROM user WHERE verified = 0;";
 	$stmt = $base->prepare($sql);
     $stmt->execute();
     return $stmt->fetchALL();

@@ -9,7 +9,7 @@ include("../../views/header.php");
 ?>
 	<div class="container">
   		<div class="container">
-    		<h2 id="SearchHead">Sales User Verification</h2>
+    		<h2 id="SearchHead">New User Verification</h2>
 
     		<?php
       			if($_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
@@ -34,7 +34,7 @@ include("../../views/header.php");
 				   border-bottom: 1px solid #ddd;
 				   color: #ffffff;
 				   font-size: 20px;'
-				   bgcolor='#006a66';
+				   bgcolor='#7f62d0';
 				   align='center'>
 				   <?php
 				   	$UID = $row["UID"];
@@ -45,7 +45,7 @@ include("../../views/header.php");
 					border-bottom: 1px solid #ddd;
 					color: #ffffff;
 					font-size: 20px;'
-					bgcolor='#006a66';
+					bgcolor='#7f62d0';
 					align='center'>
 					<?php 
 						echo $row["first_name"]." ";
@@ -56,15 +56,23 @@ include("../../views/header.php");
 				   border-bottom: 1px solid #ddd;
 				   color: #ffffff;
 				   font-size: 20px;'
-				   bgcolor='#006a66';
+				   bgcolor='#7f62d0';
+				   align='center'>
+				   <?php echo $row["role"]; ?>
+				</td>
+				<td style='border-top: 1px solid #ddd;
+				   border-bottom: 1px solid #ddd;
+				   color: #ffffff;
+				   font-size: 20px;'
+				   bgcolor='#7f62d0';
 				   align='center'>
 				   <?php echo $row["email"]; ?>
 				</td>
 			</tr>
 			<?php endforeach;}?>
 			</table>
-			<button class="btn btn-outline-success float-right my-2 my-sm-0" type="submit" name="verify">Verify</button>
-			<button class="btn btn-outline-success float-right my-2 my-sm-0" type="submit" name="remove">Deny</button>
+			<button bgcolor='#7f62d0' class="btn btn-outline-secondary float-right my-2 my-sm-0" type="submit" name="verify">Verify</button>
+			<button bgcolor='#7f62d0' class="btn btn-outline-secondary float-right my-2 my-sm-0" type="submit" name="remove">Deny</button>
 		</div>
 	</form>
 	<?php }?>
