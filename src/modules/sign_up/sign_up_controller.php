@@ -27,6 +27,8 @@ if(!isset($_POST['hidden'])){
     noneMissing();
     passwordsChecked();
     createNewUser();
+    /* Check to see if the account created was for a sales user and send them
+       to the correct page after creating the account*/
     if(isset($_POST['sales_check'])){
     	header("Location: ../../views/sales_verification_page.php");
     }
@@ -51,13 +53,14 @@ function createNewUser(){
         'last_name' => $_POST['last_name'],
         'email' => $_POST['email'],
         'password' => $_POST['password'],
-        'sales' => $_POST['sales_check']
+        'sales' => $_POST['sales_check']  /*check for sales user*/
     );
     $returned = newUser($array);
     if(is_numeric($returned)){
         $_SESSION['UID'] = $returned;
         if(isset($_POST['sales_check'])){
             $admins = adminEmails();
+            /* email admins to notify the creation of new sales users*/
             foreach($admins as $admin){
                 try {
                     $verification = new EmailServices($admin['email']);

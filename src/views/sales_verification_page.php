@@ -1,5 +1,7 @@
 <?php
 /*
+    Pace holder page after a sales user creates an account
+    and has not been verified by an admin yet.
  */
 ?>
 

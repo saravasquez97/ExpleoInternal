@@ -68,6 +68,7 @@
             <a class="nav-link" href="../landing/landing_controller.php">Home</a>
           </li>
 	  <?php
+    /* only sasles, admin, and superadmin users can access the search functionality*/
 	  	if($_SESSION['role'] == "SALES" or $_SESSION['role'] == "ADMIN" or $_SESSION['role'] == "SUPERADMIN"){
 			echo "
 			  <li class=\"nav-item\">
@@ -82,6 +83,7 @@
 			  </li>
 			";
 		}
+    /* sales users don't need to access their profile info*/
     if($_SESSION['role'] != "SALES"){
       echo "<li class=\"nav-item\">
             <a class=\"nav-link\" href=\"../profile/profile_controller.php\">Profile</a>
@@ -94,6 +96,7 @@
                       </li>
                     ";
                 }
+                /* only admin and superadmin users can verify accounts*/
                 if($_SESSION['role'] == "ADMIN" || $_SESSION['role'] == "SUPERADMIN"){
                   echo "
                       <li class=\"nav-item\">

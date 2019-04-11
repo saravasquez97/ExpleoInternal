@@ -93,6 +93,9 @@ function addInfo($data){
     }
 }
 
+/*
+    Access database to get all admin users to be emailed for account creation notifications
+*/
 function adminEmails(){
     $base = Connector::getDatabase();
     $sql = "SELECT * FROM user WHERE role = 'ADMIN' OR role = 'SUPERADMIN';";

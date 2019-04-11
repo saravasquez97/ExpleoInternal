@@ -15,15 +15,23 @@ if(!isset($_SESSION))
 
 $_SESSION['errorMessage'] = null;
 
-
+/*
+	Get sales users that are not verified
+*/
 getUsers();
 
+/*
+	Update page after verifications
+*/
 if(isset($_POST['verify'])){
 	updateVerified($_POST);
 	getUsers();
 
 }
 
+/*
+	Update page after deleting users
+*/
 if(isset($_POST['remove'])){
 	deleteUser($_POST);
 	getUsers();
@@ -31,11 +39,17 @@ if(isset($_POST['remove'])){
 
 header("Location: sales_verify_view.php");
 
+/*
+	Get the sales users to be displayed
+*/
 function getUsers(){
 	$unverified = getSalesUsers();
 	$_SESSION['users'] = $unverified;
 }
 
+/*
+	Contact the database to set the verified user flag to true
+*/
 function updateVerified($post)
 {
 	$selected = $post['selected_verify'];
@@ -44,6 +58,9 @@ function updateVerified($post)
 	}
 }
 
+/*
+	Contact the database to remove an unwanted user from the database
+*/
 function deleteUser($post){
 	$selected = $post['selected_verify'];
 	foreach($selected as $user){

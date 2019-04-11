@@ -211,21 +211,36 @@ function getPhone(){
 
 }
 
+
+/*
+	Get the software skills saves in a user profile
+*/
 function getSoftware(){
 	$data = getSoftSkills();
 	$_SESSION['softskills'] = $data;
 }
 
+/*
+	Get hardware skills saved in a user profile
+*/
 function getHardware(){
 	$data = getHardSkills();
 	$_SESSION['hardskills'] = $data;
 }
 
+/*
+	Get the the possible software skills that the user profile
+	does not have currently saved in their profile
+*/
 function getSoftwareBank(){
 	$data = getSoftBank();
 	$_SESSION['softbank'] = $data;
 }
 
+/*
+	Get the possible hardware skills that the user profile
+	does no currently have saved to their profile
+*/
 function getHardwareBank(){
 	$data = getHardBank();
 	$_SESSION['hardbank'] = $data;
