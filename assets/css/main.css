@@ -254,6 +254,11 @@ table{
 	display: inline-block;
 	float: right !important;
 }
+
+#userProg, #ProgressBarReg1 {
+	background-color: #6846c7 !important;
+}
+
 /* =================================================
                 SIGN IN PAGE STYLE
 ================================================== */

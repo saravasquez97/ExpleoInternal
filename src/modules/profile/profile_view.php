@@ -63,6 +63,7 @@ include("../../views/header.php");
 <!--						<input class="form-control" type="File" id="ProfilePhoto" style="display:none;" name="profile_photo" value = " " --><?php //if(!$_SESSION['edit']){echo "disabled";}?><!--<br><br>-->
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-4">
 						<div class="profile-labels">
@@ -76,7 +77,7 @@ include("../../views/header.php");
                             <input class="form-control" id="LastName" type="text" name="last_name" maxlength="25" value="<?php echo $_SESSION['last_name']?>" <?php if(!$_SESSION['edit']){echo "disabled";}?>><br>
 							<input class="form-control" id="Email" type="email" name="email" maxlength="30" value="<?php echo $_SESSION['email']?>" disabled><br>
                             <input class="form-control" id="Password" type="password" name="password" value="*********" disabled>
-                            <button type="button" data-toggle="modal" data-target="#ChangePassword" style="display: inline-block; height: 30px; margin-bottom: 4px; margin-top: 2px;" class="btn btn-success btn-sm">Change Password</button><br><br>
+                            <button type="button" data-toggle="modal" data-target="#ChangePassword" style="display: inline-block; height: 30px; margin-bottom: 4px; margin-top: 2px;" class="btn btn-light btn-sm">Change Password</button><br><br>
                         </div>
 					</div>
 					<div class="col-md-4">
