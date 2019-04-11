@@ -11,6 +11,7 @@ function queryUserBySkill($skill) {
   try {
     $base = Connector::getDatabase();
 
+	//Select users from databsae that fit search criteria
     $sql = "SELECT u.UID AS userID, CONCAT(u.first_name,' ',u.last_name) AS name,
 			  IFNULL(u.photo, '../../../assets/images/uploads/NoUpload.png') AS photo
 	 		  FROM user AS u WHERE u.UID IN

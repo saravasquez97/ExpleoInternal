@@ -9,7 +9,9 @@ if(!isset($_SESSION))
 $_SESSION['errorMessage'] = null;
 
 if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
+	//User clicked search button
     $skill = $_POST['user_skill'];
+	//Search for users
     $user_with_skill = queryUserBySkill($skill);
     $_SESSION['search_results'] = $user_with_skill;
     // print_r($_SESSION['search_results']);
@@ -28,6 +30,7 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 
        <div class="container" style="height: 50%; overflow-y: auto;">
 		       <table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
+				   <!-- Loop through results of query -->
 		           <?php foreach($user_with_skill as $row) : ?>
 		           <tr>
 			         <?php $photo = $row['photo'];
@@ -44,6 +47,7 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 			              </td>
 
                     <?php $checkval = intval($row['userID']);
+						//Create array of checkboxes, using user id as value
 			              echo "<td id='sr_col4'>
 				            <input type='checkbox' name='selected_compare[]' id='selected_compare' value='$checkval' />
 					          Add
@@ -56,10 +60,12 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 		</form>
 <!-- </div> -->
 	<?php } else {
+				//If no results were found display that information to user
 		        echo "<div style='display:flex;'><h2>No Results Found</h2></div>";
 	      } ?>
 	  <!-- </div> -->
 <?php } else {
+			//User navigated to page from elsewhere, display generic search view
             header("Location: search_view.php");
             exit();
       } ?>
