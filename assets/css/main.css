@@ -1,5 +1,7 @@
 @import url(bootstrap.css);
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /*MOBILE CSS*/
 body {
 	background-color: #f1f1f1;
