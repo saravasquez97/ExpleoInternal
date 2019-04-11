@@ -3,6 +3,10 @@
     Pace holder page after a sales user creates an account
     and has not been verified by an admin yet.
  */
+ if(!isset($_SESSION))
+ {
+     session_start();
+ }
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +38,9 @@
     <body>
         <div id="heading2">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <nav class="navbar navbar-expand-md fixed-top">
 
-                <a class="navbar-brand" href="#"><img src="../../assets/img/logo.png" class="figure-img img-fluid rounded" width="45" height="45" alt="The SQS company logo."></a>
+                <a class="navbar-brand" href="../../index.php"><img style="width: 9.0625rem;" src="../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,7 +56,7 @@
         <div>
             <div class="welcome">
                 <h1 id="WelcomeHead">Thank you for creating an account!</h1>
-                <p id="DirectionPara">Your account is being verified by an admin <?php echo $_SESSION['uid']?></p><br><br>
+                <p id="DirectionPara">Your account is being verified by an admin.</p><br><br>
             </div>
         </div>
     </body>

@@ -32,14 +32,14 @@ include("../../views/header.php");
         }
         ?>
 		<form class="form-horizontal" id="saveProfileForm" action="advanced_profile_controller.php" method="post" enctype="multipart/form-data">
-			<h2 id="AdvInfoHead">Advanced Profile Information</h2>
+			<h1 id="AdvInfoHead">Advanced Profile Information</h1>
 			<hr>
 			<h2 id="SkillExpInfoHead">Skill Experience</h2>
 			<hr>
 			<h3 id="AdvSoftInfoHead">Software Skills</h3>
 			<table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
 				<tr>
-					<th>Skill</th>
+					<th style="width:25rem;">Skill</th>
 					<th>Experience Level</th>
 					<th>Years of Experience</th>
 				</tr>
@@ -55,7 +55,7 @@ include("../../views/header.php");
 						echo "<td>$skill_name</td>";
 						?>
 						<td>
-							<select name='soft_skill_level[]' id='soft_skill_level' disabled>
+							<select class="form-control" style="width: 17rem;" name='soft_skill_level[]' id='soft_skill_level' disabled>
 								<!-- Set default selection to database value -->
 								<option value='N/A' <?php if($skill_exp == "N/A") echo "SELECTED";?>>N/A</option>
 								<option value='Fundamental Awareness' <?php if($skill_exp == "Fundamental Awareness") echo "SELECTED";?>>Fundamental Awareness</option>
@@ -67,7 +67,7 @@ include("../../views/header.php");
 						</td>
 						<?php
 						//Set default value to database value
-						echo "<td><input type='number' name='soft_skill_years[]' id='soft_skill_years' min='0' value='$skill_years' disabled></td>";
+						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='soft_skill_years[]' id='soft_skill_years' min='0' value='$skill_years' disabled></td>";
 						echo "</tr>";
 					}
 				?>
@@ -75,7 +75,7 @@ include("../../views/header.php");
 			<h3 id="AdvHardInfoHead">Hardware Skills</h3>
 			<table style='border-collapse:separate; border-spacing: 0 0.5em; width: 100%;'>
 				<tr>
-					<th>Skill</th>
+					<th  style="width:25rem;">Skill</th>
 					<th>Experience Level</th>
 					<th>Years of Experience</th>
 				</tr>
@@ -91,7 +91,7 @@ include("../../views/header.php");
 						echo "<td>$skill_name</td>";
 						?>
 						<td>
-							<select disabled name="hard_skill_level[]" id="hard_skill_level">
+							<select class="form-control" style="width: 17rem;" disabled name="hard_skill_level[]" id="hard_skill_level">
 								<!-- Set default selection to database value -->
 								  <option value='N/A'>N/A</option>
 								  <option value='Fundamental Awareness'>Fundamental Awareness</option>
@@ -103,7 +103,7 @@ include("../../views/header.php");
 						</td>
 						<?php
 						//Set default value to database value
-						echo "<td><input type='number' name='hard_skill_years[]' id='hard_skill_years' min='0' value='$skill_years' disabled></td>";
+						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='hard_skill_years[]' id='hard_skill_years' min='0' value='$skill_years' disabled></td>";
 						echo "</tr>";
 					}
 				?>
@@ -119,14 +119,19 @@ include("../../views/header.php");
 			<hr>
 			<div class="clearfix"></div>
 				<br>
-				<input id="SubmitAdvProfile" type="submit" name="Save" value="Save" class="btn btn-success" style="float:right;" <?php if(!$_SESSION['edit']){echo "disabled";}?>>
+				<input id="SubmitAdvProfile" type="submit" name="Save" value="Save" class="btn btn-light" style="float:right;" <?php if(!$_SESSION['edit']){echo "disabled";}?>>
 		</form>
 				<form class="form-horizontal" id="editProfile" action="advanced_profile_controller.php" method="post" enctype="multipart/form-data">
-					<input id="EditAdvProfile" type="submit" name="edit" value="Edit" class="btn btn-primary" style="float:right;margin-right:5px;"<?php if($_SESSION['edit']){echo "disabled";}?>>
+					<input id="EditAdvProfile" type="submit" name="edit" value="Edit" class="btn btn-light" style="float:right;margin-right:5px;"<?php if($_SESSION['edit']){echo "disabled";}?>>
 				</form>
 			</div>
 	</div>
 </div>
+
+<div style="padding-top:5rem;">
+    </div>
+
+<?php include("../../views/footer.php"); ?>
 
 <script>
 $("#EditAdvProfile").on('click', function() {

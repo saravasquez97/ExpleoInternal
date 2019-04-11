@@ -9,7 +9,7 @@ include("../../views/header.php");
 ?>
 	<div class="container">
   		<div class="container">
-    		<h2 id="SearchHead">New User Verification</h2>
+    		<h1 id="SearchHead">New User Verification</h1>
 
     		<?php
       			if($_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
@@ -30,49 +30,29 @@ include("../../views/header.php");
 						$UID = $row['UID'];
 			?>
 			<tr>
-				<td style='border-top: 1px solid #ddd;
-				   border-bottom: 1px solid #ddd;
-				   color: #ffffff;
-				   font-size: 20px;'
-				   bgcolor='#7f62d0';
-				   align='center'>
+				<td id="sr_col1">
 				   <?php
 				   	$UID = $row["UID"];
 					echo "<input type='checkbox' name='selected_verify[]' id='$UID' value='$UID' />";
 					?>
 				</td>
-				<td style='border-top: 1px solid #ddd;
-					border-bottom: 1px solid #ddd;
-					color: #ffffff;
-					font-size: 20px;'
-					bgcolor='#7f62d0';
-					align='center'>
-					<?php 
+				<td id="sr_col2">
+					<?php
 						echo $row["first_name"]." ";
 						echo $row["last_name"];
 					?>
 				</td>
-				<td style='border-top: 1px solid #ddd;
-				   border-bottom: 1px solid #ddd;
-				   color: #ffffff;
-				   font-size: 20px;'
-				   bgcolor='#7f62d0';
-				   align='center'>
+				<td id="sr_col3">
 				   <?php echo $row["role"]; ?>
 				</td>
-				<td style='border-top: 1px solid #ddd;
-				   border-bottom: 1px solid #ddd;
-				   color: #ffffff;
-				   font-size: 20px;'
-				   bgcolor='#7f62d0';
-				   align='center'>
+				<td id="sr_col4">
 				   <?php echo $row["email"]; ?>
 				</td>
 			</tr>
 			<?php endforeach;}?>
 			</table>
 			<button bgcolor='#7f62d0' class="btn btn-outline-secondary float-right my-2 my-sm-0" type="submit" name="verify">Verify</button>
-			<button bgcolor='#7f62d0' class="btn btn-outline-secondary float-right my-2 my-sm-0" type="submit" name="remove">Deny</button>
+			<button bgcolor='#7f62d0' style="margin-right: 10px;" class="btn btn-outline-secondary float-right my-2 my-sm-0" type="submit" name="remove">Deny</button>
 		</div>
 	</form>
 	<?php }?>
