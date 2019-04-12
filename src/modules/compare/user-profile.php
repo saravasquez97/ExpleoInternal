@@ -19,7 +19,7 @@ else{
 
      ?>
 
-     <div class="row">
+    <div class="row">
        <div class="col-sm-3">
          <div class="profile-modal" name="photo-div"><?php echo showPhoto($user, $show_photo); ?></div>
        </div>
@@ -29,7 +29,7 @@ else{
      </div>
 
      <hr>
-
+<!---
      <div class="row">
        <div class="col-sm-6">
          <div class="profile-modal" name="software-skills-div">
@@ -42,6 +42,14 @@ else{
          </div>
        </div>
      </div>
+
+-->	<div class = "row">
+		<?php echo showExtendedHard($user);?>
+     	</div>
+	<hr>
+	<div class = "row">
+                <?php echo showExtendedSoft($user);?>
+        </div>
 
   <?php
   } else{

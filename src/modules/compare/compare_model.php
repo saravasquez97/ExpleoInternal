@@ -84,6 +84,45 @@ function getHard($uid){
 		}
 }
 
+//Given a user ID< this function returns all the hardware skills, years of experience, and experience level
+//Given a user ID, this function returns all the hardware skills for the user
+function getExtendedHard($uid){
+  try {
+                        $base = Connector::getDatabase();
+      $sql = "SELECT skill, years_of_experience as years, skill_level as level FROM user_hardware_skills
+                                                  JOIN hardware_skills
+                                                        ON user_hardware_skills.skill_id = hardware_skills.UID
+                                                        WHERE user_id = '$uid'
+                                                        ORDER BY hardware_skills.skill ASC, user_hardware_skills.years_of_experience DESC;";
+      $stmt = $base->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetchAll();
+      //return hardware skills in an array in alaphabetical
+        return $result;
+    } catch (Exception $e) {
+                                throw ($e);
+                }
+}
+
+//Given a user ID this function returns all the software skills, years of experience, and experience level
+function getExtendedSoft($uid){
+  try {
+                        $base = Connector::getDatabase();
+      $sql = "SELECT skill, years_of_experience as years, skill_level as level FROM user_software_skills
+                                                  JOIN software_skills
+                                                        ON user_software_skills.skill_id = software_skills.UID
+                                                        WHERE user_id = '$uid'
+                                                        ORDER BY software_skills.skill ASC, user_software_skills.years_of_experience DESC;";
+      $stmt = $base->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetchAll();
+      //return hardware skills in an array in alaphabetical
+        return $result;
+    } catch (Exception $e) {
+                                throw ($e);
+                }
+}
+
 //Given a searched skill, this function returns the User ID of all users with that searched skill
 function in_software_skills($searched_skill) {
 	try {
