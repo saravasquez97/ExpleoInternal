@@ -54,7 +54,7 @@ function getSoft($uid){
 				  		JOIN software_skills AS ss
 							ON uss.skill_id = ss.UID
 							WHERE user_id = '$uid'
-							ORDER BY skill ASC;"; #We can change the order later, maybe sort by skill ranking
+							ORDER BY ss.skill ASC, uss.years_of_experience DESC;"; 
   		$stmt = $base->prepare($sql);
   		$stmt->execute();
 		$result = $stmt->fetchAll();
@@ -73,7 +73,7 @@ function getHard($uid){
 						  JOIN hardware_skills
 							ON user_hardware_skills.skill_id = hardware_skills.UID
 							WHERE user_id = '$uid'
-							ORDER BY skill ASC;";
+							ORDER BY hardware_skills.skill ASC, user_hardware_skills.years_of_experience DESC;";
       $stmt = $base->prepare($sql);
       $stmt->execute();
       $result = $stmt->fetchAll();
