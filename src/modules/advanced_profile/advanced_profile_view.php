@@ -67,7 +67,7 @@ include("../../views/header.php");
 						</td>
 						<?php
 						//Set default value to database value
-						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='soft_skill_years[]' id='soft_skill_years' min='0' value='$skill_years' disabled></td>";
+						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='soft_skill_years[]' id='soft_skill_years' min='0' value='$skill_years' disabled required></td>";
 						echo "</tr>";
 					}
 				?>
@@ -103,7 +103,7 @@ include("../../views/header.php");
 						</td>
 						<?php
 						//Set default value to database value
-						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='hard_skill_years[]' id='hard_skill_years' min='0' value='$skill_years' disabled></td>";
+						echo "<td><input class='form-control' style='width: 6rem;' type='number' name='hard_skill_years[]' id='hard_skill_years' min='0' value='$skill_years' disabled required></td>";
 						echo "</tr>";
 					}
 				?>
