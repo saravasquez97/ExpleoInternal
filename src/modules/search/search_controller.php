@@ -8,6 +8,16 @@ if(!isset($_SESSION))
 
 $_SESSION['errorMessage'] = null;
 
+//get skill list to populate search bar and format as array of strings
+$skillResult = getSkillList();
+$skillArray = array();
+for ($i = 0; $i < count($skillResult); $i++)
+{
+  array_push($skillArray, $skillResult[$i]['skill']);
+}
+$_SESSION['skillArray'] = $skillArray;
+
+
 if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 	//User clicked search button
     $skill = $_POST['user_skill'];

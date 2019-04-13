@@ -29,27 +29,13 @@ else{
      </div>
 
      <hr>
-<!---
-     <div class="row">
-       <div class="col-sm-6">
-         <div class="profile-modal" name="software-skills-div">
-           <?php echo showSoft($user, $show_soft, null); ?>
-         </div>
-       </div>
-       <div class="col-sm-6">
-         <div class="profile-modal" name="hardware-skills-div">
-           <?php echo showHard($user, $show_hard, null); ?>
-         </div>
-       </div>
+     <div class = "row">
+		     <?php echo showExtendedSoft($user);?>
      </div>
-
--->	<div class = "row">
-		<?php echo showExtendedHard($user);?>
-     	</div>
-	<hr>
-	<div class = "row">
-                <?php echo showExtendedSoft($user);?>
-        </div>
+	   <hr>
+	   <div class = "row">
+        <?php echo showExtendedHard($user);?>
+     </div>
 
   <?php
   } else{

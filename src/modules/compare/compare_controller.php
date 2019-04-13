@@ -111,15 +111,15 @@ function showExtendedHard($user){
 
 	echo "<table style = 'width:100%'>";
 		echo "<tr>";
-			echo "<th>Hardware Skills</th>";
-			echo "<th>Years Experience</th>";
+			echo "<th style='width: 22rem;'>Hardware Skills</th>";
+			echo "<th style='width: 13rem;'>Years Experience</th>";
 			echo "<th>Level</th>";
 		echo "</tr>";
 	for( $i=0; $i < sizeof($result); $i++)
 	{
 		echo "<tr>";
 			echo "<td>".$result[$i]['skill']."</td>";
-			echo "<td>".$result[$i]['years']."</td>";		
+			echo "<td>".$result[$i]['years']."</td>";
 			echo "<td>".$result[$i]['level']."</td>";
 		echo "</tr>";
 	}
@@ -131,8 +131,8 @@ function showExtendedSoft($user){
 
         echo "<table style = 'width:100%'>";
                 echo "<tr>";
-                        echo "<th>Software Skills</th>";
-                        echo "<th>Years Experience</th>";
+                        echo "<th style='width: 22rem;'>Software Skills</th>";
+                        echo "<th style='width: 13rem;'>Years Experience</th>";
                         echo "<th>Level</th>";
                 echo "</tr>";
         for( $i=0; $i < sizeof($result); $i++)
