@@ -14,11 +14,10 @@ include("../../views/header.php");
     		<?php
       			if($_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
       			{
-        			echo "<h3> Login as an Administrator to access this page </h3></div><hr></div>";}
+        			echo "<h3> Login as an Administrator to access this page </h3></div></div>";}
         		else{
     		?>
     	</div>
-    	<hr>
 	</div>
 	<form action="sales_verify_controller.php" method ="post" >
 		<div class="container" style="height: 50%; overflow-y: auto;">
