@@ -41,6 +41,9 @@ function showBasic($user, $show_basic)
 	}
 }
 
+//display software skills in view
+//$searched_sskill is the queried skill, if it's not null, this will display at the top of the list on the compare page
+//$max_skills_print is the total # of skills we want to see in the card, if none specified it will display all (up to 100)
 function showSoft($user, $show_soft, $searched_sskill, $max_skills_print = 100)
 {
 	$MAX_SKILLS_PRINT = $max_skills_print;
@@ -70,6 +73,9 @@ function showSoft($user, $show_soft, $searched_sskill, $max_skills_print = 100)
 	}
 }
 
+//display hardware skills in view
+//$searched_hskill is the queried skill, if it's not null, this will display at the top of the list on the compare page
+//$max_skills_print is the total # of skills we want to see in the card, if none specified it will display all (up to 100)
 function showHard($user, $show_hard, $searched_hskill, $max_skills_print = 100)
 {
 	$MAX_SKILLS_PRINT = $max_skills_print;
@@ -101,11 +107,15 @@ function showHard($user, $show_hard, $searched_hskill, $max_skills_print = 100)
 	}
 }
 
+//checks if the queried skill is in the software_skills table
+//returns true if yes, false if no
+//used to determine in which div to display the queried skill
 function isSoftSkill($searched_skill) {
 	$result = in_software_skills($searched_skill);
 	return $result;
 }
 
+//for view full profile model, displays a table of skills with user experience and level
 function showExtendedHard($user){
 	$result = getExtendedHard($user);
 
@@ -126,6 +136,7 @@ function showExtendedHard($user){
 	echo "</table>";
 }
 
+//for view full profile model, displays a table of skills with user experience and level
 function showExtendedSoft($user){
         $result = getExtendedSoft($user);
 
