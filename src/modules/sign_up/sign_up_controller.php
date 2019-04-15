@@ -27,12 +27,14 @@ if(!isset($_POST['hidden'])){
     noneMissing();
     passwordsChecked();
     createNewUser();
-    if(isset($_POST['sales_check'])){
+    /* Check to see if the account created was for a sales user and send them
+       to the correct page after creating the account*/
+   /* if(isset($_POST['sales_check'])){*/
     	header("Location: ../../views/sales_verification_page.php");
-    }
+   /* }
     else{
     	header("Location: ../../views/email_verification_page.php");
-    }
+    }*/
     exit();
 }
 
@@ -51,17 +53,31 @@ function createNewUser(){
         'last_name' => $_POST['last_name'],
         'email' => $_POST['email'],
         'password' => $_POST['password'],
-	'sales' => $_POST['sales_check']
+        'sales' => $_POST['sales_check']  /*check for sales user*/
     );
     $returned = newUser($array);
     if(is_numeric($returned)){
         $_SESSION['UID'] = $returned;
-        try {
-            $verification = new EmailServices($array['email']);
-            $verification->sendAccountVerification();
-        }catch(Exception $e){
-            error("Error: " . $e);
-        }
+        /*if(isset($_POST['sales_check'])){*/
+            $admins = adminEmails();
+            /* email admins to notify the creation of new sales users*/
+            foreach($admins as $admin){
+                try {
+                    $verification = new EmailServices($admin['email']);
+                    $verification->sendSalesVerification();
+                }catch(Exception $e){
+                    error("Error: " . $e);
+                }
+            }
+       /* }
+        else{
+            try {
+                $verification = new EmailServices($array['email']);
+                $verification->sendAccountVerification();
+            }catch(Exception $e){
+                error("Error: " . $e);
+            }
+        }*/
     }else{
         error("Error: Email already exists. Please sign in." );
     }

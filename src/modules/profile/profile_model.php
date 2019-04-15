@@ -173,6 +173,9 @@ function getGroupName(){
     return $stmt->fetch();
 }
 
+/*
+    Access the sofware skills saved to a specific user profile
+*/
 function getSoftSkills(){
     $base = Connector::getDatabase();
 
@@ -189,6 +192,9 @@ function getSoftSkills(){
     return $stmt->fetchAll();
 }
 
+/*
+    Access the hardware skills saved to a specific user profile
+*/
 function getHardSkills(){
     $base = Connector::getDatabase();
 
@@ -205,6 +211,9 @@ function getHardSkills(){
     return $stmt->fetchAll();
 }
 
+/*
+    Get the leftover possible softwares skills that a user doesn't already have
+*/
 function getSoftBank(){
     $base = Connector::getDatabase();
 
@@ -222,6 +231,9 @@ function getSoftBank(){
     return $stmt->fetchAll();
 }
 
+/*
+    Get the leftover possible hardware skills that a user doesn't already have
+*/
 function getHardBank(){
     $base = Connector::getDatabase();
 

@@ -153,5 +153,5 @@ if(!isset($_SESSION))
 </div>
 
 <?php
-    include('../../views/footer.php');
+    //include('../../views/footer.php');
 ?>

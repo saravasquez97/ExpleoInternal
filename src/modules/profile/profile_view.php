@@ -41,7 +41,7 @@ include("../../views/header.php");
             }
             ?>
 			<form class="form-horizontal" id="saveProfileForm" action="profile_controller.php" method="post" enctype="multipart/form-data">
-				<h2 id="PersonInfoHead">Personal Information</h2>
+				<h1 id="PersonInfoHead">Personal Information</h1>
 				<hr>
 				<h3 style="text-align: center;" id="ProfProgHead">Profile Progress</h3>
 				<div class="progress">
@@ -63,6 +63,7 @@ include("../../views/header.php");
 <!--						<input class="form-control" type="File" id="ProfilePhoto" style="display:none;" name="profile_photo" value = " " --><?php //if(!$_SESSION['edit']){echo "disabled";}?><!--<br><br>-->
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-4">
 						<div class="profile-labels">
@@ -76,7 +77,7 @@ include("../../views/header.php");
                             <input class="form-control" id="LastName" type="text" name="last_name" maxlength="25" value="<?php echo $_SESSION['last_name']?>" <?php if(!$_SESSION['edit']){echo "disabled";}?>><br>
 							<input class="form-control" id="Email" type="email" name="email" maxlength="30" value="<?php echo $_SESSION['email']?>" disabled><br>
                             <input class="form-control" id="Password" type="password" name="password" value="*********" disabled>
-                            <button type="button" data-toggle="modal" data-target="#ChangePassword" style="display: inline-block; height: 30px; margin-bottom: 4px; margin-top: 2px;" class="btn btn-success btn-sm">Change Password</button><br><br>
+                            <button type="button" data-toggle="modal" data-target="#ChangePassword" style="display: inline-block; height: 30px; margin-bottom: 4px; margin-top: 2px;" class="btn btn-light btn-sm">Change Password</button><br><br>
                         </div>
 					</div>
 					<div class="col-md-4">
@@ -245,7 +246,7 @@ include("../../views/header.php");
 				</div>
 				<div class="software-skills-personal">
 					<label>Your Skills</label>
-				    <select multiple="multiple" name='softwareSkills[]'' id='lstBoxSoftware2' class="form-control" disabled>
+				    <select multiple="multiple" name='softwareSkills[]' id='lstBoxSoftware2' class="form-control" disabled>
                         <?php
                             $softbanks = $_SESSION['softskills'];
                             foreach($softbanks as $softbank){
@@ -297,11 +298,12 @@ include("../../views/header.php");
 				</div>
 				<div class="clearfix"></div>
 				    <br>
-				    <input id="SubmitProfile" type="submit" name="Save" value="Save" class="btn btn-success" style="float:right;" <?php if(!$_SESSION['edit']){echo "disabled";}?>>
+				    <input id="SubmitProfile" type="submit" name="Save" value="Save" class="btn btn-light" style="float:right;" <?php if(!$_SESSION['edit']){echo "disabled";}?>>
             </form>
                     <form class="form-horizontal" id="editProfile" action="profile_controller.php" method="post" enctype="multipart/form-data">
-				        <input id="EditProfile" type="submit" name="edit" value="Edit" class="btn btn-primary" style="float:right;margin-right:5px;"<?php if($_SESSION['edit']){echo "disabled";}?>>
+				        <input id="EditProfile" type="submit" name="edit" value="Edit" class="btn btn-light" style="float:right;margin-right:5px;"<?php if($_SESSION['edit']){echo "disabled";}?>>
                     </form>
+					<input type="button" class="btn btn-light" style:"background-color: #6846c7; float:right; margin-right:5px;" <?php if($_SESSION['edit']){echo "disabled";}?> onclick="location.href='../advanced_profile/advanced_profile_controller.php';" value="Advanced Information">
 <!--				    <input type="text" name="orgin" value="0" style="display:none;">-->
 <!--				    <input type="text" id="UserLevel"name="level" value="3" style="display:none;">-->
                 </div>
