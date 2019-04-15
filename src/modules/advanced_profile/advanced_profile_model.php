@@ -67,7 +67,6 @@ function updateSkills($post){
 		$sql = "UPDATE user_software_skills
 				SET skill_level = '$software_skills_level[$i]', years_of_experience = '$software_skills_years[$i]'
 				WHERE skill_id = $skill_id AND user_id = $uid";
-		echo "$sql";
         $stmt = $base->prepare($sql);
         $stmt->execute();
 	}
@@ -79,7 +78,6 @@ function updateSkills($post){
         $sql = "UPDATE user_hardware_skills
 				SET skill_level = '$hardware_skills_level[$i]', years_of_experience = '$hardware_skills_years[$i]'
 				WHERE skill_id = $skill_id AND user_id = $uid";
-		echo "$sql";
         $stmt = $base->prepare($sql);
         $stmt->execute();
     }
