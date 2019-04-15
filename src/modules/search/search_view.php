@@ -20,21 +20,16 @@ html {
 <script type="text/javascript">document.title += " Employee Search"</script>
 
 <div class="container">
-
     <h1 id="SearchHead">Employee Search</h1>
-
     <?php
 	  //Verify user is Sales user or Admin
       if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" )
       {
-        echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div><hr></div></div>";}
+        echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div><hr>";}
       else{
     ?>
-  <!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
-<!---<h6 id="SearchInstructions">Enter a skill to search for employees</h6> -->
-    <hr>
 </div>
-</div>
+
 <div class="container">
     <div class = "text-center">
 	  <!-- Create Search Form -->
@@ -42,7 +37,7 @@ html {
         <!-- <font size="4">Hardware or Software Skill: &nbsp;</font> -->
 
         <div class="autocomplete" style="width:300px;">
-          <input type="text" class="form-control mr-sm-2"  aria-label="Search" id="user_skill" placeholder="Skill" name="user_skill" maxlength = "25" style="font-size: .8em;
+          <input type="text" class="form-control mr-sm-2"  aria-label="Search" id="user_skill" placeholder="Search Skill" name="user_skill" maxlength = "25" style="font-size: .8em;
           font-weight: bold;" autocomplete="off">
         </div>
 	      <button class="btn btn-light my-2 my-sm-0" type="submit" id="search_users">Search</button> &nbsp;
@@ -169,7 +164,7 @@ html {
   autocomplete(document.getElementById("user_skill"), skills);
 
 
-// Search button on enter keypress
+// Hit enter on autocomplete list and avoid search button
   // Get the input field
   var input = document.getElementById("user_skill");
 
@@ -183,7 +178,6 @@ html {
       document.getElementById("search_users").click();
     }
   });
-
 </script>
 
 <?php }

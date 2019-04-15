@@ -24,9 +24,7 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 	//Search for users
     $user_with_skill = queryUserBySkill($skill);
     $_SESSION['search_results'] = $user_with_skill;
-    // print_r($_SESSION['search_results']);
-    // print_r($user_with_skill);
-    #header("Location: search_view.php");
+
     include("search_view.php");?>
 
 	  <!-- <div class="container"> -->
@@ -57,7 +55,7 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 			              </td>
 
                     <?php $checkval = intval($row['userID']);
-						//Create array of checkboxes, using user id as value
+						        //Create array of checkboxes, using user id as value
 			              echo "<td id='sr_col4'>
 				            <input type='checkbox' name='selected_compare[]' id='selected_compare' value='$checkval' />
 					          Add
