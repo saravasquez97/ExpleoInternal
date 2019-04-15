@@ -11,12 +11,12 @@
 <div class="container">
 <h1 id="CompareHead">Employee Comparison</h1>
 
-<?php  
+<?php
     //If an unathorized user tries to access this page, all that is displayed is this message
     if($_SESSION['role'] != "SALES" && $_SESSION['role'] != "ADMIN" && $_SESSION['role'] != "SUPERADMIN" ) {
           echo "<h3> Login as a Sales Representative or Administrator to access this page </h3></div>";
        }
-    
+
     else {
 ?>
         <hr>
@@ -27,7 +27,7 @@
 	if(isset($_POST['compare']))
             {
               	if (isset($_POST['selected_compare']))
-		{	
+		{
 			//if users to compare have been sent from the previous page, create the cards to display user information
             		$user_ids = $_POST['selected_compare'];
             		Create_Cards($user_ids);

@@ -65,4 +65,22 @@ function queryUserBySkill($skill) {
   }
 }
 
+function getSkillList() {
+  try {
+    $base = Connector::getDatabase();
+
+	//Select users from databsae that fit search criteria
+    $sql = "(SELECT skill FROM software_skills) UNION (SELECT skill FROM hardware_skills)";
+
+    $stmt = $base->prepare($sql);
+    $stmt->bindParam(':skill',$skill,PDO::PARAM_STR);
+    $stmt->execute();
+	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+
+  } catch (Exception $e) {
+    throw ($e);
+  }
+}
+
 ?>
