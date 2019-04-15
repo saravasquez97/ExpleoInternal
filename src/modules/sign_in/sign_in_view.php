@@ -70,9 +70,31 @@
 <!--        <div id="ProgressBarReg1" class="progress-bar progress-bar-striped active" role="progressbar"-->
 <!--             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>-->
 <!--    </div>-->
-    <div class="login">
+    <div class="login" align = "center">
         <?php
-        if(!is_null($_SESSION['errorMessage'])){
+       if(isset($_SESSION['role'])){
+		?>
+		
+		<h3>You're already signed in! </h3>
+		<h4>Would you like to proceed to the homepage or sign out? </h4>
+		<form class = "for-inline my-2 my-lg-0" action="../landing/landing_controller.php">
+		<br>		
+		<button class="btn btn-light my-2 my-sm-0" type="submit">Go to Homepage</button>
+		</br>
+		</form>
+
+		<form class = "for-inline my-2 my-lg-0" action="../sign_out/sign_out_controller.php">
+              	<br>	
+		<button class="btn btn-light my-2 my-sm-0" type="submit">Sign Out</button>
+          	</br>
+		</form>
+
+<?php
+
+		
+}
+	else{
+	if(!is_null($_SESSION['errorMessage'])){
             $errorMessage = $_SESSION['errorMessage'];
             echo "
                     <div class='alert alert-danger'>
@@ -101,5 +123,6 @@
                 <button class="btn" style="width: 100%;" id="ResetBut" onclick="location.href='../reset_password/reset_password_controller.php'">Reset Password</button>
               </div>
             </div>
-	   </div>
+<?php } ?>	   
+</div>
 </html>
