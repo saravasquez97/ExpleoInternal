@@ -39,12 +39,20 @@ if(isset($_POST['user_skill']) && !isset($_POST['reset'])) {
 			              </td>"; ?>
 
                     <td id="sr_col2">
-				            <?php echo $row['name']; ?>
-			              </td>
+				    	<?php echo $row['name']; ?>
+			        </td>
 
                     <td id="sr_col3">
-				            <?php echo $skill; ?>
-			              </td>
+				    	<?php echo $skill; ?>
+			        </td>
+
+					<td id="sr_col3">
+						<?php echo $row['skill_years']." years exp."; ?>
+					</td>
+
+					<td id="sr_col3">
+	  					<?php echo $row['skill_exp']; ?>
+	  			    </td>
 
                     <?php $checkval = intval($row['userID']);
 						//Create array of checkboxes, using user id as value
