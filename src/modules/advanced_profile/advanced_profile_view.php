@@ -93,12 +93,12 @@ include("../../views/header.php");
 						<td>
 							<select disabled name="hard_skill_level[]" id="hard_skill_level">
 								<!-- Set default selection to database value -->
-								  <option value='N/A'>N/A</option>
-								  <option value='Fundamental Awareness'>Fundamental Awareness</option>
-								  <option value='Novice'>Novice</option>
-								  <option value='Intermediate'>Intermediate</option>
-								  <option value='Advanced'>Advanced</option>
-								  <option value='Expert'>Expert</option>
+								  <option value='N/A' <?php if($skill_exp == "N/A") echo "SELECTED";?>>N/A</option>
+								  <option value='Fundamental Awareness' <?php if($skill_exp == "Fundamental Awareness") echo "SELECTED";?>>Fundamental Awareness</option>
+								  <option value='Novice' <?php if($skill_exp == "Novice") echo "SELECTED";?>>Novice</option>
+								  <option value='Intermediate' <?php if($skill_exp == "Intermediate") echo "SELECTED";?>>Intermediate</option>
+								  <option value='Advanced' <?php if($skill_exp == "Advanced") echo "SELECTED";?>>Advanced</option>
+								  <option value='Expert' <?php if($skill_exp == "Expert") echo "SELECTED";?>>Expert</option>
 							</select>
 						</td>
 						<?php
