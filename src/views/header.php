@@ -8,6 +8,8 @@
      {
          session_start();
      }
+
+    $user = $_SESSION['first_name']." ".$_SESSION['last_name'];
 ?>
 
 
@@ -122,6 +124,7 @@
           <form class = "for-inline my-2 my-lg-0" action="../sign_out/sign_out_controller.php">
               <button class="btn btn-light my-2 my-sm-0" type="submit">Sign Out</button>
           </form>
+          <?php echo "<div style='margin-left: 1em; margin-right: .5em; color: white; font-weight: bold; font-size: .8em;'>$user</div>" ?>
       </div>
     </nav>
     <?php ?>
