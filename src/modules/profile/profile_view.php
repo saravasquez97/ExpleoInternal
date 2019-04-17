@@ -17,6 +17,13 @@ include("../../views/header.php");
 <script type="text/javascript">document.title += " Home"</script>
 
 <div class="container">
+    <h1 id="PersonInfoHead">Personal Information</h1>
+            <?php
+                if($_SESSION['role'] == "SALES" || !isset($_SESSION['uid']) )
+                {
+                    echo "<h3> Login as a regular to access this page </h3></div></div>";}
+                else{
+            ?>
 		<div class="container">
             <?php
             if(!is_null($_SESSION['errorMessage'])){
@@ -41,8 +48,6 @@ include("../../views/header.php");
             }
             ?>
 			<form class="form-horizontal" id="saveProfileForm" action="profile_controller.php" method="post" enctype="multipart/form-data">
-				<h1 id="PersonInfoHead">Personal Information</h1>
-				<hr>
 				<h3 style="text-align: center;" id="ProfProgHead">Profile Progress</h3>
 				<div class="progress">
                     <div id="userProg" class="progress-bar  progress-bar-striped  bg-success" style="width: <?php echo $_SESSION['progress']?>%" role="progressbar" aria-valuenow="<?php echo $_SESSION['progress'] ?>%" aria-valuemin="0" aria-valuemax="100">
@@ -306,7 +311,11 @@ include("../../views/header.php");
 					<input type="button" class="btn btn-light" style:"background-color: #6846c7; float:right; margin-right:5px;" <?php if($_SESSION['edit']){echo "disabled";}?> onclick="location.href='../advanced_profile/advanced_profile_controller.php';" value="Advanced Information">
 <!--				    <input type="text" name="orgin" value="0" style="display:none;">-->
 <!--				    <input type="text" id="UserLevel"name="level" value="3" style="display:none;">-->
+
                 </div>
+                <?php
+                }
+            ?>
 		</div>
 		<div style="padding-top:5rem;">
         </div>
