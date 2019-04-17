@@ -1,11 +1,67 @@
 <?php
-    include('../../views/header.php');
+    //include('../../views/header.php');
     include("compare_controller.php");
     if(!isset($_SESSION))
     {
         session_start();
     }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/css/main.css">
+      <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.css">
+
+    <title>Expleo Internal</title>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../../assets/js/jquery.min.js"><\/script>')</script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+    <style>
+      body {
+          padding-top: 5rem;
+          font-family: "Montserrat", sans-serif;
+      }
+
+      h1 {
+        font-weight: bold;
+      }
+    </style>
+
+      <script type="text/javascript">
+          $(document).ready(function(){
+
+              if($(window).width() > 767){
+                  $('.navbar .dropdown').hover(function() {
+                      $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+
+                  }, function() {
+                      $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
+
+                  });
+
+                  $('.navbar .dropdown > a').click(function(){
+                      location.href = this.href;
+                  });
+              }
+          });
+      </script>
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top">
+
+      <a class="navbar-brand" href="../landing/landing_controller.php"><img style="width: 9.0625rem;" src="../../../assets/img/expleo-logo-white.png" class="figure-img img-fluid rounded" width="45" height="45" alt="logo"></a>
+        <span class="navbar-toggler-icon"></span>
+    </nav>
 
 
 <div class="container">
