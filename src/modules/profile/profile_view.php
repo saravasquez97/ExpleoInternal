@@ -21,7 +21,7 @@ include("../../views/header.php");
             <?php
                 if($_SESSION['role'] == "SALES" || !isset($_SESSION['uid']) )
                 {
-                    echo "<h3> Login as a regular to access this page </h3></div></div>";}
+                    echo "<h3> Login to access this page </h3></div></div>";}
                 else{
             ?>
 		<div class="container">

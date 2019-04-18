@@ -130,6 +130,17 @@ function updateSkills($post){
 
     $uid = $_SESSION['uid'];
 
+    $sql_soft = "SELECT * FROM user_software_skills WHERE user_id = '$uid'";
+    $sql_hard = "SELECT * FROM user_hardware_skills WHERE user_id = '$uid'";
+
+    $stmt_soft = $base->prepare($sql_soft);
+    $stmt_soft->execute();
+    $softVals = $stmt_soft->fetchAll();
+
+    $stmt_hard = $base->prepare($sql_hard);
+    $stmt_hard->execute();
+    $hardVals = $stmt_hard->fetchAll();
+
 
     deleteSkills();
 
@@ -138,21 +149,37 @@ function updateSkills($post){
 
 
     foreach($software_skills as $software_skill){
-        $sql = "INSERT INTO user_software_skills (skill_id, user_id)
-                VALUES ('$software_skill', '$uid')";
+        $level = 'N/A';
+        $years = 0;
+        foreach($softVals as $values){
+            if($values['skill_id']==$software_skill){
+                $level = $values['skill_level'];
+                $years = $values['years_of_experience'];
+            }
+        }
+        $sql = "INSERT INTO user_software_skills (skill_id, user_id, skill_level, years_of_experience)
+                VALUES ('$software_skill', '$uid', '$level', '$years')";
         $stmt = $base->prepare($sql);
         $stmt->execute();
     }
 
+
     foreach($hardware_skills as $hardware_skill){
-        $sql = "INSERT INTO user_hardware_skills (skill_id, user_id)
-                VALUES ('$hardware_skill', '$uid')";
+        $level = 'N/A';
+        $years = 0;
+        foreach($hardVals as $values){
+            if($values['skill_id']==$hardware_skill){
+                $level = $values['skill_level'];
+                $years = $values['years_of_experience'];
+            }
+        }
+        $sql = "INSERT INTO user_hardware_skills (skill_id, user_id, skill_level, years_of_experience)
+                VALUES ('$hardware_skill', '$uid', '$level', '$years')";
         $stmt = $base->prepare($sql);
         $stmt->execute();
     }
 
 }
-
 
 /**
  * gets user's group name

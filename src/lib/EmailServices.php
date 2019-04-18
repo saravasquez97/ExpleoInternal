@@ -83,7 +83,8 @@ class EmailServices {
         $msg .= "<h2>Welcome to SQS Training!</h2>";
         $msg .= "<p>To finish setting up your account, we just need to make sure this email address is yours.</p>";
         $msg .= "<a href=\"".$url."\">Verify Email</a>";
-        $msg .= "<p>Thanks,</p>";
+        $msg .= "<p>If the above link is broken contact an administrator to verify your account.</p>";
+	$msg .= "<p>Thanks,</p>";
         $msg .= "<p>The SQS Training Team</p>";
         $msg .= "</body></html>";
 
