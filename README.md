@@ -21,7 +21,7 @@ A file named 'config.ini' not tracked in this repository will need to be placed 
 
 Below is the tree directory of the source code
 
-...
+```
 ExpleoInternal/
 ├── assets
 │   ├── css
@@ -207,7 +207,7 @@ ExpleoInternal/
     ├── ConnectorTest.php
     ├── EmailServicesTest.php
     └── LoggerTest.php
-...
+```
 
 ## Dependencies
 
