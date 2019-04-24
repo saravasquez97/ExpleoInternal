@@ -3,170 +3,7 @@
 
 
 
-Code in this repository represents efforts of Connor Kunstek @ConnorKunstek, Nick Sladic @Nickademius, Luke Andrews, and Stephen Ritchie
-
-
-
-https://github.com/ConnorKunstek/SeniorDesignProject
-
-
-
-
-## Directory Structure
-
-Bellow is the tree directory of the source code
-
-```
-├───SQSTraining/
-│   ├───assets/
-│   │   ├───css/
-│   │   │   ├───bootstrap-grid.css
-│   │   │   ├───bootstrap-grid.css.map
-│   │   │   ├───bootstrap-grid.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-grid.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-grid.min.css
-│   │   │   ├───bootstrap-grid.min.css.map
-│   │   │   ├───bootstrap-grid.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-grid.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-reboot.css
-│   │   │   ├───bootstrap-reboot.css.map
-│   │   │   ├───bootstrap-reboot.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-reboot.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-reboot.min.css
-│   │   │   ├───bootstrap-reboot.min.css.map
-│   │   │   ├───bootstrap-reboot.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap-reboot.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap.css
-│   │   │   ├───bootstrap.css.map
-│   │   │   ├───bootstrap.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap.min.css
-│   │   │   ├───bootstrap.min.css.map
-│   │   │   ├───bootstrap.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───bootstrap.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───ie10-viewport-bug-workaround.css
-│   │   │   └───main.css
-│   │   ├───fonts/
-│   │   │   ├───glyphicons-halflings-regular.eot
-│   │   │   ├───glyphicons-halflings-regular.svg
-│   │   │   ├───glyphicons-halflings-regular.svg~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │   │   ├───glyphicons-halflings-regular.ttf
-│   │   │   ├───glyphicons-halflings-regular.woff
-│   │   │   └───glyphicons-halflings-regular.woff2
-│   │   ├───images/
-│   │   │   ├───Header-Home.png
-│   │   │   ├───logo.png
-│   │   │   └───sprite.png
-│   │   ├───img/
-│   │   │   ├───Header-Home.png
-│   │   │   ├───alien.svg
-│   │   │   ├───astronaut.svg
-│   │   │   ├───logo.png
-│   │   │   └───sprite.png
-│   │   └───js/
-│   │       ├───bootstrap.bundle.js
-│   │       ├───bootstrap.bundle.js.map
-│   │       ├───bootstrap.bundle.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.bundle.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.bundle.min.js
-│   │       ├───bootstrap.bundle.min.js.map
-│   │       ├───bootstrap.bundle.min.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.bundle.min.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.js
-│   │       ├───bootstrap.js.map
-│   │       ├───bootstrap.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.min.js
-│   │       ├───bootstrap.min.js.map
-│   │       ├───bootstrap.min.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───bootstrap.min.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
-│   │       ├───customjs.js
-│   │       ├───ie10-viewport-bug-workaround.js
-│   │       ├───jquery.min.js
-│   │       └───npm.js
-│   ├───bin/
-│   │   ├───DEMO-V1.sql
-│   │   ├───SANDBOX-V1.sql
-│   │   ├───SQSInstallation.sh
-│   │   ├───VANILLA-V1.sql
-│   │   ├───config_dump.php
-│   │   ├───database_diag.php
-│   │   └───phpunit.phar
-│   ├───config/
-│   │   └───config.ini
-│   ├───log/
-│   │   ├───.gitkeep
-│   │   ├───log
-│   │   └───run.log
-│   ├───src/
-│   │   ├───config/
-│   │   │   ├───config.ini
-│   │   │   ├───config.php
-│   │   │   └───database.ini
-│   │   ├───lib/
-│   │   │   ├───ConfigurationInterface.php
-│   │   │   ├───Connector.php
-│   │   │   ├───EmailServices.php
-│   │   │   ├───FeatureLoader.php
-│   │   │   └───Logger.php
-│   │   ├───modules/
-│   │   │   ├───change_password/
-│   │   │   │   ├───change_password_controller.php
-│   │   │   │   └───change_password_model.php
-│   │   │   ├───groups/
-│   │   │   │   ├───groups_controller.php
-│   │   │   │   ├───groups_model.php
-│   │   │   │   └───groups_view.php
-│   │   │   ├───home/
-│   │   │   │   ├───home_controller.php
-│   │   │   │   ├───home_model.php
-│   │   │   │   └───home_view.php
-│   │   │   ├───landing/
-│   │   │   │   ├───landing_controller.php
-│   │   │   │   ├───landing_model.php
-│   │   │   │   └───landing_view.php
-│   │   │   ├───profile/
-│   │   │   │   ├───profile_controller.php
-│   │   │   │   ├───profile_model.php
-│   │   │   │   ├───profile_view.php
-│   │   │   │   └───profile_view_edit.php
-|   │   │   ├───reset_password/
-│   │   │   │   ├───reset_password_controller.php
-│   │   │   │   ├───reset_password_model.php
-│   │   │   │   └───reset_password_view.php
-│   │   │   ├───sign_in/
-│   │   │   │   ├───sign_in_controller.php
-│   │   │   │   ├───sign_in_model.php
-│   │   │   │   └───sign_in_view.php
-│   │   │   ├───sign_out/
-│   │   │   │   └───sign_out_controller.php
-│   │   │   ├───sign_up/
-│   │   │   │   ├───sign_up_controller.php
-│   │   │   │   ├───sign_up_model.php
-│   │   │   │   ├───sign_up_view.php
-│   │   │   │   └───sign_up_view_2.php
-│   │   │   └───verify/
-│   │   │       ├───failure.html
-│   │   │       ├───success.html
-│   │   │       ├───verify_controller.php
-│   │   │       ├───verify_model.php
-│   │   │       └───verify_view.php
-│   │   ├───views/
-│   │   │   ├───email_verification_page.php
-│   │   │   ├───error.php
-│   │   │   ├───footer.php
-│   │   │   └───header.php
-│   │   |
-│   ├───test/
-│   │   ├───ConnectorTest.php
-│   │   ├───EmailServicesTest.php
-│   │   └───LoggerTest.php
-│   ├───.gitignore
-│   ├───README.md
-│   ├───SQSInstallation.sh
-│   ├───index.php
-
-```
+Code in this repository represents efforts of Grant Sturgill, Lexi Kahwaji, Angelina Grosso, and Sara Vasquez (CS 499 spring 2019), and Connor Kunstek, Nick Sladic, Luke Andrews, and Stephen Ritchie (CS 499 fall 2018).
 
 
 
@@ -211,55 +48,44 @@ JQuery and Bootstrap are not listed as dependencies as the necessary files are i
 ## Installation Instructions
 
 
+You may choose to either install Apache MySQL, and PHP individually, or choose one of a variety of stacks available online to help install all of them at once. On our Linux machines we installed the LAMP stack, and on our Windows machines, we chose the XAMPP (cross-platform) stack. 
 
-### Setup
+Detailed instructions on how to install the LAMP stack on Ubuntu can be found here: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04 
 
-This section will walk you through the steps needed to take in order to use the custom installation script.
+The same for XAMPP: https://pureinfotech.com/install-xampp-windows-10/ 
 
-First we must clone the repo or download the zip  
 
-`$ git clone https://github.com/ConnorKunstek/SQSTraining.git`  
 
-Next move into the bin directory inside the repo  
+#### Configuring the Database
 
-`$ cd SQSTraining/bin`  
 
-Now we can run the install script inside `SQSTraining/bin` using bash  
+A dump file will be provided with our test data. You have the option to load the file into your instance of MySQL or construct a new database following our schema. The configuration for the database in the application is found in src/config/database.ini. In this file you will need to replace the attributes of the database with your own. 
 
-`$ bash ./SQSInstallation.sh`
 
-You will then be prompted with some choices to make
-![alt_text](https://i.imgur.com/rfC8lId.png)
 
-#### Full Installation
-This will install all the required dependencies for the application.
-> Note: some installs require root permissions so you might have to type your password for you local machine
+#### Testing Locally on a Linux Machine
 
-Once all dependencies are install the script will then prompt you to decide if you would like to setup the database  
 
-`Would you like to setup a predefined database? - y/n: <USER CHOICE>`  
+The directory /var/www/html is created when you install Apache. You will want to navigate to this directory (from your root directory) and clone the repository or deposit the source code here. Then all you have to do is navigate to localhost/file_path/index.php in your browser (preferably Google Chrome), and you should be able to use the application. If parts of the application do not load, be sure to check your read permissions in the terminal. 
 
-If you choose yes then you proceed to [Setup Database](#SetupDatabase)
+#### Testing Locally on a Windows Machine
 
-#### Setup Database  
 
-The installation script allows you to setup and choose between three different pre-set data for the databases,
+Once you have installed XAMPP, you will need to navigate to the location where XAMPP was saved (for example, on the C drive), and go to xampp/htdocs. This is where you will clone the repository or deposit the source code. Then navigate to localhost/file_path/index.php in your browser (preferably Google Chrome), and you should be able to use the application. 
 
-- [Vanilla](#Vanilla)
-- [Sandbox](#Sandbox)
-- [Demo](#Demo)
 
-##### Vanilla
-This database setup will populate the database with the bare bones required for the application to run. It includes all required tables needed and populates one user which will be a Super Admin that has the overarching control over the application
 
-##### Sandbox
-This database setup will populate the database with all types of users that can be within the application. All types (Super Admin, Admin, Super User, User, Restricted) will be put into the database and will be able to play around with.
+## Spring 2019 Features added
 
-##### Demo
-This database setup will populate the database will a randomly generate set of users and fake data associated will the whole functionality of the application.
-
-#### Update Repository
-This will simply update and pull changes from the master branch the repository is associated with. It will pull the master branch and all its changes
+The following modules were created or revised:
+	Compare
+	Search
+	Advanced profile
+	Sales verify
+	Profile
+	Sign in
+	Sign up
+	Landing view
 
 
 ## Fall 2018 Updates
