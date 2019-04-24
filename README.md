@@ -59,7 +59,7 @@ The same for XAMPP: https://pureinfotech.com/install-xampp-windows-10/
 #### Configuring the Database
 
 
-A dump file will be provided with our test data. You have the option to load the file into your instance of MySQL or construct a new database following our schema. The configuration for the database in the application is found in src/config/database.ini. In this file you will need to replace the attributes of the database with your own. 
+A dump file is provided containing some test data in the root directory. You have the option to load the file into your instance of MySQL or construct a new database following our schema. The configuration for the database in the application is found in src/config/database.ini. In this file you will need to replace the attributes of the database with your own. 
 
 
 
