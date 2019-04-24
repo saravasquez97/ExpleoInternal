@@ -178,30 +178,6 @@ INSERT INTO `phone_list` VALUES (1,'11111111111',1,'2018-12-01 21:13:40','AT&T',
 UNLOCK TABLES;
 
 --
--- Table structure for table `previous_verticals`
---
-
-DROP TABLE IF EXISTS `previous_verticals`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `previous_verticals` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `vertical` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `previous_verticals`
---
-
-LOCK TABLES `previous_verticals` WRITE;
-/*!40000 ALTER TABLE `previous_verticals` DISABLE KEYS */;
-INSERT INTO `previous_verticals` VALUES (1,'Healthcare'),(2,'Insurance'),(3,'Education'),(4,'Realty'),(5,'Retail');
-/*!40000 ALTER TABLE `previous_verticals` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `software_skills`
 --
 
@@ -262,7 +238,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'SuperAdmin','SuperAdmin','SuperAdmin@sqs.com','SUPERADMIN','superadmin',5,'Male','2001-01-01','1234 SuperAdmin Ln.','SuperAdminVille','AL',9999,NULL,50,NULL,1),(2,'Admin','Admin','Admin@sqs.com','ADMIN','admin',4,'Male','2001-01-01','1234 Admin Ln.','AdminVille','AL',56219,NULL,50,'1aa48fc4880bb0c9b8a3bf979d3b917e',1),(3,'SuperUser','SuperUser','SuperUser@sqs.com','SUPERUSER','super',3,'Male','2001-01-01','1234 SuperUser Ln.','SuperUserVille','AL',9999,NULL,50,NULL,1),(4,'User','User','User@sqs.com','USER','password',2,'Male','2001-01-01','1234 User Ln.','UserVille','AL',9999,NULL,50,NULL,1),(5,'Restricted','User','RestrictedUser@sqs.com','RESTRICTED','password',1,'Male','2001-01-01','1234 Restricted Ln.','RestrictedVille','AL',99999,NULL,50,NULL,1),(8,'Bruce','Wayne','lexitest1@gmail.com','USER','password',3,'Male','1965-09-12','300 University Circle','Louisville','KY',90001,NULL,50,NULL,1),(16,'Grant','Sturgill','grant.sturgill@uky.edu','USER','password',3,'Male','1994-01-01','Somewhere','Place','WI',40507,NULL,50,'5a4b25aaed25c2ee1b74de72dc03c14e',1),(28,'Grant','Sturgill','grantsturgill@gmail.com','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'30bb3825e8f631cc6075c0f87bb4978c',1),(45,'Sara','Vasquez','sara.vasquez@uky.edu','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'02522a2b2726fb0a03bb19f2d8d9524d',1),(48,'Sales','Test','Sales@sqs.com','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'d490d7b4576290fa60eb31b5fc917ad1',1),(88,'Gina','Grosso','angelina.grosso@yahoo.com','USER','password',3,'Female','0000-00-00','789 Somewhere Street','Plain','OH',88888,NULL,50,'8cb22bdd0b7ba1ab13d742e22eed8da2',1),(100,'Sara','Vasquez','sarsar1797@yahoo.com','USER','password',3,'Female','2029-08-05','1234 Place','Placeville','PA',12345,NULL,50,NULL,1),(107,'Peter','Parker','poodles@hotmail.com','USER','password',3,'Male','2002-02-02','123 New York Street','New York City','NY',12345,NULL,50,NULL,1),(109,'Ellie','Jones','ellie.jones@jones.com','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(110,'Jane','Jacobs','jane.jacobs@jane.com','USER','password',3,'Other','1988-08-08','8 Jane Ave','Janeville','LA',88888,NULL,50,NULL,1),(112,'Nathan','Norberry','nathan.norberry@sqs.com','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(113,'Anthony','Stark','iamironman@stark.net','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(114,'NotGrant','Sturgill','gdst223@g.uky.edu','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'b706835de79a2b4e80506f582af3676a',1),(118,'Test','Admin','sarvas97@gmail.com','ADMIN','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(121,'Diana','Prince','svasquez1179@gmail.com','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(122,'William','Watts','electricity@gmail.com','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,0),(124,'Tommy','Tutone','tommy.tutone@expleo.com','USER','password',3,'NULL','0000-00-00','','','NU',0,NULL,50,NULL,1),(125,'Brad','Button','brad.button@expleo.com','USER','password',3,'NULL','0000-00-00','','','NU',0,NULL,50,NULL,1);
+INSERT INTO `user` VALUES (1,'SuperAdmin','SuperAdmin','SuperAdmin@sqs.com','SUPERADMIN','superadmin',5,'Male','2001-01-01','1234 SuperAdmin Ln.','SuperAdminVille','AL',9999,NULL,50,NULL,1),(2,'Admin','Admin','Admin@sqs.com','ADMIN','admin',4,'Male','2001-01-01','1234 Admin Ln.','AdminVille','AL',56219,NULL,50,'1aa48fc4880bb0c9b8a3bf979d3b917e',1),(3,'SuperUser','SuperUser','SuperUser@sqs.com','SUPERUSER','super',3,'Male','2001-01-01','1234 SuperUser Ln.','SuperUserVille','AL',9999,NULL,50,NULL,1),(4,'User','User','User@sqs.com','USER','password',2,'Male','2001-01-01','1234 User Ln.','UserVille','AL',9999,NULL,50,NULL,1),(5,'Restricted','User','RestrictedUser@sqs.com','RESTRICTED','password',1,'Male','2001-01-01','1234 Restricted Ln.','RestrictedVille','AL',99999,NULL,50,NULL,1),(8,'Bruce','Wayne','lexitest1@gmail.com','USER','password',3,'Male','1965-09-12','300 University Circle','Louisville','KY',90001,NULL,50,NULL,1),(48,'Sales','Test','Sales@sqs.com','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'d490d7b4576290fa60eb31b5fc917ad1',1),(107,'Peter','Parker','poodles@hotmail.com','USER','password',3,'Male','2002-02-02','123 New York Street','New York City','NY',12345,NULL,50,NULL,1),(109,'Ellie','Jones','ellie.jones@jones.com','SALES','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(110,'Jane','Jacobs','jane.jacobs@jane.com','USER','password',3,'Other','1988-08-08','8 Jane Ave','Janeville','LA',88888,NULL,50,NULL,1),(112,'Nathan','Norberry','nathan.norberry@sqs.com','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(113,'Anthony','Stark','iamironman@stark.net','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,1),(122,'William','Watts','electricity@gmail.com','USER','password',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,NULL,0),(124,'Tommy','Tutone','tommy.tutone@expleo.com','USER','password',3,'NULL','0000-00-00','','','NU',0,NULL,50,NULL,1),(125,'Brad','Button','brad.button@expleo.com','USER','password',3,'NULL','0000-00-00','','','NU',0,NULL,50,NULL,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,31 +295,6 @@ LOCK TABLES `user_software_skills` WRITE;
 INSERT INTO `user_software_skills` VALUES (77,33,60,'N/A',0),(78,16,60,'N/A',0),(10919,13,8,'Fundamental Awareness',2),(1877,24,50,'N/A',0),(1876,42,50,'N/A',0),(1874,1,50,'N/A',0),(1873,33,50,'N/A',0),(1872,13,50,'N/A',0),(11300,33,124,'Expert',6),(10058,3,5,'Novice',5),(3263,1,24,'N/A',0),(3262,5,24,'N/A',0),(3261,35,24,'N/A',0),(3260,28,24,'N/A',0),(10863,35,110,'Intermediate',7),(10862,31,110,'Advanced',8),(10861,46,110,'Intermediate',3),(3259,3,24,'N/A',0),(3258,46,24,'N/A',0),(11294,5,16,'Fundamental Awareness',0),(11284,16,100,'Novice',4),(11298,46,124,'Intermediate',4),(10075,36,88,'Expert',30),(10074,35,88,'Advanced',6),(10057,36,5,'Expert',30),(10059,43,5,'Intermediate',20),(10072,27,88,'Expert',7),(10073,31,88,'Novice',1),(10912,6,105,'Fundamental Awareness',3),(10910,11,107,'Novice',2),(10909,43,107,'Novice',2),(10908,1,107,'Fundamental Awareness',1),(10907,3,107,'Fundamental Awareness',0),(10906,42,107,'Fundamental Awareness',1),(11297,1,2,'N/A',0),(10966,36,116,'Expert',10),(11299,36,124,'Advanced',8),(11296,42,16,'Intermediate',0),(11295,6,16,'Novice',0),(11293,46,16,'Intermediate',0),(11292,3,16,'Novice',0),(11286,26,100,'N/A',0),(11285,43,100,'N/A',0),(11283,12,100,'N/A',0),(11282,14,100,'Novice',3),(11281,10,100,'Fundamental Awareness',1),(11280,22,100,'Novice',6),(11279,18,100,'Intermediate',8),(10860,36,110,'Novice',2),(10916,36,8,'Fundamental Awareness',2),(10917,29,8,'Fundamental Awareness',3),(10918,6,8,'Novice',4),(11277,28,100,'Novice',4),(11278,20,100,'Novice',3),(11276,30,100,'Intermediate',9),(11275,24,100,'Advanced',12),(11274,34,100,'Novice',3),(11271,36,100,'Intermediate',6),(11272,33,100,'Intermediate',8),(11273,32,100,'Novice',2),(11270,37,100,'Novice',10),(11269,35,100,'Novice',3),(11268,31,100,'Fundamental Awareness',1),(11267,29,100,'Fundamental Awareness',1),(11266,47,100,'Novice',6),(11265,21,100,'Fundamental Awareness',0),(11264,27,100,'Novice',7),(11263,17,100,'Novice',2),(11262,23,100,'Fundamental Awareness',0),(11261,25,100,'Novice',6),(11260,15,100,'Fundamental Awareness',1),(11259,13,100,'Fundamental Awareness',1),(11258,11,100,'Novice',4),(11257,9,100,'Fundamental Awareness',1),(11256,5,100,'Novice',8),(11255,6,100,'Fundamental Awareness',4),(11254,3,100,'N/A',0),(11253,1,100,'Fundamental Awareness',2),(11252,42,100,'N/A',0),(10911,1,105,'N/A',0),(10913,10,105,'Advanced',5),(10914,36,105,'Novice',2),(10915,33,105,'Intermediate',3),(11251,46,100,'Advanced',15),(11301,36,125,'Expert',13),(11302,33,125,'Intermediate',5);
 /*!40000 ALTER TABLE `user_software_skills` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `user_verticals`
---
-
-DROP TABLE IF EXISTS `user_verticals`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_verticals` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `vertical_id` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_verticals`
---
-
-LOCK TABLES `user_verticals` WRITE;
-/*!40000 ALTER TABLE `user_verticals` DISABLE KEYS */;
-INSERT INTO `user_verticals` VALUES (1,1,6);
-/*!40000 ALTER TABLE `user_verticals` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -354,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-24 13:34:33
+-- Dump completed on 2019-04-24 13:45:11
