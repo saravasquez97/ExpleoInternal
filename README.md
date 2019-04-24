@@ -1,5 +1,5 @@
 
-# CS499 Team 1 SQS Training Site: Employee Comparison README
+# CS499 Team 1 Expleo Training Site: Employee Comparison README
 
 
 
