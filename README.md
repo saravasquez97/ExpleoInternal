@@ -17,7 +17,197 @@ The root directory contains SQL connector files used for accesing the MySQL data
 
 A file named 'config.ini' not tracked in this repository will need to be placed in the root directory containing credentials for accessing the MySQL database. Further instructions follow under 'Installation Instructions'.
 
+## Directory Structure
 
+Below is the tree directory of the source code
+
+```
+ExpleoInternal/
+├── assets
+│   ├── css
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap.css.map
+│   │   ├── bootstrap.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-grid.css
+│   │   ├── bootstrap-grid.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-grid.css.map
+│   │   ├── bootstrap-grid.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-grid.min.css
+│   │   ├── bootstrap-grid.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-grid.min.css.map
+│   │   ├── bootstrap-grid.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap.min.css.map
+│   │   ├── bootstrap.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-reboot.css
+│   │   ├── bootstrap-reboot.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-reboot.css.map
+│   │   ├── bootstrap-reboot.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-reboot.min.css
+│   │   ├── bootstrap-reboot.min.css~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── bootstrap-reboot.min.css.map
+│   │   ├── bootstrap-reboot.min.css.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── ie10-viewport-bug-workaround.css
+│   │   └── main.css
+│   ├── fonts
+│   │   ├── glyphicons-halflings-regular.eot
+│   │   ├── glyphicons-halflings-regular.svg
+│   │   ├── glyphicons-halflings-regular.svg~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│   │   ├── glyphicons-halflings-regular.ttf
+│   │   ├── glyphicons-halflings-regular.woff
+│   │   └── glyphicons-halflings-regular.woff2
+│   ├── images
+│   │   ├── expleo-logo-purple.png
+│   │   ├── expleo-logo-white.png
+│   │   ├── Header-Home.png
+│   │   ├── logo.png
+│   │   ├── sprite.png
+│   │   └── uploads
+│   │       └── NoUpload.png
+│   ├── img
+│   │   ├── alien.svg
+│   │   ├── astronaut.svg
+│   │   ├── expleo-logo-purple.png
+│   │   ├── expleo-logo-white.png
+│   │   ├── Header-Home.png
+│   │   ├── logo.png
+│   │   └── sprite.png
+│   └── js
+│       ├── bootstrap.bundle.js
+│       ├── bootstrap.bundle.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.bundle.js.map
+│       ├── bootstrap.bundle.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.bundle.min.js
+│       ├── bootstrap.bundle.min.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.bundle.min.js.map
+│       ├── bootstrap.bundle.min.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.js
+│       ├── bootstrap.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.js.map
+│       ├── bootstrap.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.min.js
+│       ├── bootstrap.min.js~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── bootstrap.min.js.map
+│       ├── bootstrap.min.js.map~3e7a75c83d0bb2da77b8c336c8c47179a39b9462
+│       ├── customjs.js
+│       ├── ie10-viewport-bug-workaround.js
+│       ├── jquery.min.js
+│       └── npm.js
+├── bin
+│   ├── config_dump.php
+│   ├── database_diag.php
+│   ├── DEMO-V1.sql
+│   ├── phpunit.phar
+│   ├── SANDBOX-V1.sql
+│   ├── SQSInstallation.sh
+│   └── VANILLA-V1.sql
+├── config
+│   └── config.ini
+├── features
+│   ├── googlemap
+│   │   ├── googlemap_0.php
+│   │   ├── googlemap_1.php
+│   │   ├── googlemap_2.php
+│   │   ├── googlemap_3.php
+│   │   ├── googlemap_4.php
+│   │   └── googlemap_5.php
+│   └── youtube
+│       ├── youtube_0.php
+│       ├── youtube_1.php
+│       ├── youtube_2.php
+│       ├── youtube_3.php
+│       ├── youtube_4.php
+│       └── youtube_5.php
+├── .gitignore
+├── index.php
+├── log
+│   ├── .gitkeep
+│   └── sqstraining.log
+├── README.md
+├── src
+│   ├── config
+│   │   ├── config.ini
+│   │   ├── config.php
+│   │   └── database.ini
+│   ├── lib
+│   │   ├── ConfigurationInterface.php
+│   │   ├── Connector.php
+│   │   ├── EmailServices.php
+│   │   ├── FeatureLoader.php
+│   │   └── Logger.php
+│   ├── modules
+│   │   ├── advanced_profile
+│   │   │   ├── advanced_profile_controller.php
+│   │   │   ├── advanced_profile_model.php
+│   │   │   └── advanced_profile_view.php
+│   │   ├── change_password
+│   │   │   ├── change_password_controller.php
+│   │   │   └── change_password_model.php
+│   │   ├── compare
+│   │   │   ├── compare_controller.php
+│   │   │   ├── compare_model.php
+│   │   │   ├── compare_view.php
+│   │   │   └── user-profile.php
+│   │   ├── feature
+│   │   │   ├── feature_controller.php
+│   │   │   ├── feature_model.php
+│   │   │   └── feature_view.php
+│   │   ├── groups
+│   │   │   ├── groups_controller.php
+│   │   │   ├── groups_model.php
+│   │   │   └── groups_view.php
+│   │   ├── home
+│   │   │   ├── home_controller.php
+│   │   │   ├── home_model.php
+│   │   │   └── home_view.php
+│   │   ├── landing
+│   │   │   ├── landing_controller.php
+│   │   │   └── landing_view.php
+│   │   ├── profile
+│   │   │   ├── profile_controller.php
+│   │   │   ├── profile_model.php
+│   │   │   └── profile_view.php
+│   │   ├── reset_password
+│   │   │   ├── reset_password_controller.php
+│   │   │   ├── reset_password_model.php
+│   │   │   └── reset_password_view.php
+│   │   ├── sales_verify
+│   │   │   ├── sales_verify_controller.php
+│   │   │   ├── sales_verify_model.php
+│   │   │   └── sales_verify_view.php
+│   │   ├── search
+│   │   │   ├── search_controller.php
+│   │   │   ├── search_model.php
+│   │   │   └── search_view.php
+│   │   ├── sign_in
+│   │   │   ├── sign_in_controller.php
+│   │   │   ├── sign_in_model.php
+│   │   │   └── sign_in_view.php
+│   │   ├── sign_out
+│   │   │   └── sign_out_controller.php
+│   │   ├── sign_up
+│   │   │   ├── sign_up_controller.php
+│   │   │   ├── sign_up_model.php
+│   │   │   └── sign_up_view.php
+│   │   └── verify
+│   │       ├── failure.html
+│   │       ├── success.html
+│   │       ├── verify_controller.php
+│   │       ├── verify_model.php
+│   │       └── verify_view.php
+│   └── views
+│       ├── email_verification_page.php
+│       ├── error.php
+│       ├── footer.php
+│       ├── header.php
+│       └── sales_verification_page.php
+└── test
+    ├── ConnectorTest.php
+    ├── EmailServicesTest.php
+    └── LoggerTest.php
+```
 
 ## Dependencies
 
@@ -59,7 +249,7 @@ The same for XAMPP: https://pureinfotech.com/install-xampp-windows-10/
 #### Configuring the Database
 
 
-A dump file will be provided with our test data. You have the option to load the file into your instance of MySQL or construct a new database following our schema. The configuration for the database in the application is found in src/config/database.ini. In this file you will need to replace the attributes of the database with your own. 
+A dump file is provided containing some test data in the root directory. You have the option to load the file into your instance of MySQL or construct a new database following our schema. The configuration for the database in the application is found in src/config/database.ini. In this file you will need to replace the attributes of the database with your own. 
 
 
 
